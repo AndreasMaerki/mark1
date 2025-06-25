@@ -1,4 +1,6 @@
 declare module '*.md' {
-  const value: string
-  export default value
+  const content: string
+  export default content
 }
+
+export {}
