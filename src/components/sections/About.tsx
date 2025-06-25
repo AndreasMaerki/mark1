@@ -14,7 +14,7 @@ const aboutContent = `# Hey👋, it's Andreas Maerki, Senior iOS Developer
 
 As a passionate iOS developer with 10 years of experience, I bring extensive expertise in implementing high-quality mobile applications, particularly in retail. I've developed and enhanced apps for B2B and B2C clients, including major retail platforms like kkiosk and avec 24/7. My knowledge spans Swift, SwiftUI, and the latest iOS technologies. I excel in collaborating with agile teams and executing projects from conception to App Store publication, consistently delivering innovative solutions in the e-commerce space.
 
-I'm currently a **Senior iOS Developer** at [Valora Schweiz AG](https://valora.com) where I develop new iOS applications and enhance existing ones using Swift, SwiftUI, and UIKit. I collaborate closely with iOS, Android, and backend developers to define new interfaces and conduct cross-platform code reviews to ensure feature parity across platforms.
+I am currently **freelancing as a Senior iOS Developer**, working with clients to develop innovative mobile applications using Swift, SwiftUI, and UIKit. I specialize in creating high-quality iOS solutions for startups and established companies, bringing extensive experience from retail and e-commerce platforms to deliver exceptional user experiences.
 
 My journey into software development began with a unique background in mechanical engineering and CNC machining, which taught me precision and attention to detail that I now apply to mobile development. I earned my **Dipl. Techniker HF in Computer Science** from ABB Technical School in Baden, making the transition from manufacturing to software engineering.
 

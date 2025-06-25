@@ -9,8 +9,19 @@ const PageWrapper = lazy(() => import('@/components/layouts/PageWrapper'))
 const Blog = lazy(() => import('@/components/sections/Blog'))
 const Footer = lazy(() => import('@/components/layouts/Footer'))
 
+// Local blog articles
+const localArticles: ArticleProps[] = [
+  {
+    title: "Building ARGeoTracking: Bridging Real World Coordinates with Augmented Reality",
+    link: "/blog/argeotracking-ar-coordinate-transformation",
+    datePublished: "December 18, 2024",
+    minRead: 8,
+    preview: "Recently, I had the opportunity to analyze a fascinating iOS project that demonstrates the intricate challenge of combining augmented reality with real-world geographical coordinates. The ARGeoTracking app represents a sophisticated solution to one of AR development's most complex problems..."
+  }
+]
+
 export default function BlogPage(): JSX.Element {
-  const [articles, setArticles] = useState<ArticleProps[]>([])
+  const [rssArticles, setRssArticles] = useState<ArticleProps[]>([])
 
   const getProperty = (item: Element, query: string): string =>
     item.querySelector(query)?.textContent ?? ''
@@ -51,10 +62,13 @@ export default function BlogPage(): JSX.Element {
           })
         }
 
-        setArticles(loadedItems)
+        setRssArticles(loadedItems)
       })
-      .catch((): void => setArticles([]))
+      .catch((): void => setRssArticles([]))
   }, [])
+
+  // Combine local articles with RSS articles, local articles first
+  const allArticles = [...localArticles, ...rssArticles]
 
   return (
     <>
@@ -62,7 +76,7 @@ export default function BlogPage(): JSX.Element {
         <title>Blog | iOS Development Insights by Andreas Maerki</title>
         <meta
           name='description'
-          content="Read Andreas Maerki's blog for iOS development insights. Learn about Swift, SwiftUI, and mobile app development."
+          content="Read Andreas Maerki's blog for iOS development insights. Learn about Swift, SwiftUI, mobile app development, AR, and geo-location tracking."
         />
         <link
           rel='canonical'
@@ -71,7 +85,7 @@ export default function BlogPage(): JSX.Element {
       </Helmet>
       <Suspense fallback={<Preloader />}>
         <PageWrapper>
-          <Blog articles={articles} />
+          <Blog articles={allArticles} />
           <Footer />
         </PageWrapper>
       </Suspense>

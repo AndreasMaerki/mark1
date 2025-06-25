@@ -16,8 +16,6 @@ export default function Footer(): JSX.Element {
 
   return (
     <footer className="relative bg-gradient-to-t from-purple-500/5 to-transparent">
-      <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02]" />
-      
       <div className="relative z-10 container mx-auto px-6 py-12">
         <div className="flex flex-col items-center space-y-6">
           {/* Brand */}

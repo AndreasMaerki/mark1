@@ -5,6 +5,7 @@ import BlogPage from '@/pages/BlogPage'
 import AboutPage from '@/pages/AboutPage'
 import ProjectPage from '@/pages/ProjectPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import ARGeoTrackingBlogPost from '@/pages/ARGeoTrackingBlogPost'
 
 export default function Router(): JSX.Element {
   const location = useLocation()
@@ -19,6 +20,10 @@ export default function Router(): JSX.Element {
         <Route
           path='/blog'
           element={<BlogPage />}
+        />
+        <Route
+          path='/blog/argeotracking-ar-coordinate-transformation'
+          element={<ARGeoTrackingBlogPost />}
         />
         <Route
           path='/projects'
