@@ -11,6 +11,7 @@ const SlidingInUnderline = lazy(() => import('@/components/common/reusable/Slidi
 const HighlightText = lazy(() => import('@/components/common/reusable/HighlightText'))
 const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
 const SocialMediaLinks = lazy(() => import('@/components/common/SocialMediaLinks'))
+const ProfileImage = lazy(() => import('@/components/common/ProfileImage'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 
 export default function Hero(): JSX.Element {
@@ -49,7 +50,12 @@ export default function Hero(): JSX.Element {
         className={clsx(animationClass, 'relative flex h-[88vh] min-h-[480px] flex-col justify-between z-10')}
       >
         <div className='flex h-3/4 flex-col justify-center space-y-4 sm:space-y-6'>
-          <h2 className={clsx('animate-fade-in', 'text-xl sm:text-2xl lg:text-3xl')}>
+          {/* Profile Image */}
+          <div className="flex justify-center animate-fade-in">
+            <ProfileImage size="xl" className="mb-6" />
+          </div>
+          
+          <h2 className={clsx('animate-fade-in !delay-200', 'text-xl sm:text-2xl lg:text-3xl')}>
             <span className="uppercase tracking-widest text-xs text-center text-primary-dark dark:text-primary-light block mb-4 opacity-70">
               iOS Development Excellence
             </span>
@@ -63,13 +69,13 @@ export default function Hero(): JSX.Element {
           </h2>
           
           <TextGenerateEffect
-            className="text-center text-3xl sm:text-5xl lg:text-6xl break-words font-extrabold tracking-tight"
+            className="text-center text-3xl sm:text-5xl lg:text-6xl break-words font-extrabold tracking-tight !delay-300"
             words="10+ years crafting iOS applications and mobile experiences"
           />
           
           <p
             className={clsx(
-              'animate-fade-in !delay-300',
+              'animate-fade-in !delay-400',
               'text-muted-dark dark:text-muted',
               'sm:text-lg lg:text-xl',
               'pb-0'
@@ -78,7 +84,7 @@ export default function Hero(): JSX.Element {
             Senior iOS Developer specializing in <InlineLink href='#'>Swift & SwiftUI</InlineLink>
           </p>
           
-          <SocialMediaLinks className={clsx('animate-fade-in !delay-500', 'mt-6')} />
+          <SocialMediaLinks className={clsx('animate-fade-in !delay-600', 'mt-6')} />
         </div>
         
         <div className="flex justify-center">
