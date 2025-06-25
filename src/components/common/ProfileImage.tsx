@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import andreasProfileImage from '@/assets/images/andreas-profile.png'
 
 interface ProfileImageProps {
   className?: string
@@ -40,7 +41,7 @@ export default function ProfileImage({ className, size = 'lg' }: ProfileImagePro
         sizeClasses[size]
       )}>
         <img
-          src="/src/assets/images/andreas-profile.png"
+          src={andreasProfileImage}
           alt="Andreas Maerki"
           className="w-[85%] h-[85%] object-cover rounded-full relative -left-2 top-3"
         />
