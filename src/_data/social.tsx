@@ -38,7 +38,7 @@ const social: SocialProps[] = [
   },
   {
     name: 'YouTube',
-    url: 'https://youtube.com/@andreasmaerki',
+    url: 'https://youtube.com/@theRumbleChannel',
     icon: (
       <YoutubeLineIcon
         size={24}
