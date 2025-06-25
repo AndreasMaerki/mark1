@@ -62,8 +62,8 @@ const projects: ProjectProps[] = [
         push notifications for offers, and seamless QR code redemption. Ranked #73 in Shopping category with 4.4★ rating.
       </span>
     ),
-    techStacks: ['SwiftUI', 'Swift', 'REST API'],
-    otherTechStacks: ['Combine', 'Swift Concurrency', 'Push Notifications', 'Core Data'],
+    techStacks: ['SwiftUI', 'Swift', 'REST API', 'Firebase'],
+    otherTechStacks: ['MVVM Architecture', 'Combine', 'Swift Concurrency', 'Push Notifications', 'Core Location'],
     category: 'iOS Development',
     links: getLinks(undefined, 'https://apps.apple.com/ch/app/k-kiosk/id1215644802?l=en-GB', true)
   },
@@ -77,8 +77,8 @@ const projects: ProjectProps[] = [
         tier-based rewards (Bronze/Silver/Gold), integrated payments, and store locator. Ranked #14 in Food & Drink with 4.2★ rating.
       </span>
     ),
-    techStacks: ['SwiftUI', 'Swift', 'REST API'],
-    otherTechStacks: ['Combine', 'Swift Concurrency', 'Apple Pay', 'Core Location'],
+    techStacks: ['SwiftUI', 'Swift', 'REST API', 'Firebase'],
+    otherTechStacks: ['MVVM Architecture', 'Combine', 'Swift Concurrency', 'Apple Pay', 'Core Location', 'Push Notifications'],
     category: 'iOS Development',
     links: getLinks(undefined, 'https://apps.apple.com/ch/app/brezelk%C3%B6nig/id1526693066?l=en-GB', true)
   },
@@ -92,8 +92,8 @@ const projects: ProjectProps[] = [
         and integrated payments for unmanned stores. Revolutionary retail technology with 4.5★ rating from 839+ reviews.
       </span>
     ),
-    techStacks: ['SwiftUI', 'Swift', 'REST API'],
-    otherTechStacks: ['Combine', 'Swift Concurrency', 'AVFoundation', 'Vision Framework'],
+    techStacks: ['SwiftUI', 'Swift', 'REST API', 'Firebase'],
+    otherTechStacks: ['MVVM Architecture', 'Combine', 'Swift Concurrency', 'AVFoundation', 'Push Notifications', 'Core Location'],
     category: 'iOS Development',
     links: getLinks(undefined, 'https://apps.apple.com/ch/app/avec-24-7-scan-pay/id1454000074?l=en-GB', true)
   },
@@ -109,8 +109,8 @@ const projects: ProjectProps[] = [
         <InlineLink href='https://www.washingtonpost.com'>Washington Post</InlineLink> for its AI attractiveness rating system.
       </span>
     ),
-    techStacks: ['Objective-C', 'UIKit', 'REST API'],
-    otherTechStacks: ['iBeacon', 'Core Location', 'Push Notifications', 'Machine Learning'],
+    techStacks: ['Objective-C', 'UIKit', 'REST API', 'Firebase'],
+    otherTechStacks: ['iBeacon', 'Bluetooth', 'Core Location', 'Push Notifications', 'Machine Learning'],
     category: 'iOS Development',
     links: []
   },
@@ -145,7 +145,7 @@ const projects: ProjectProps[] = [
       </span>
     ),
     techStacks: ['Objective-C', 'Swift', 'UIKit'],
-    otherTechStacks: ['REST API', 'Core Data', 'JSON Parsing', 'Auto Layout'],
+    otherTechStacks: ['REST API', 'Core Data', 'Push Notifications'],
     category: 'iOS Development',
     links: []
   },
@@ -156,12 +156,12 @@ const projects: ProjectProps[] = [
     description: (
       <span>
         macOS time tracking application built with SwiftUI and SwiftData. Features multiple simultaneous activity tracking,
-        calendar views, dashboard analytics, menu bar integration, and color-coded activities. 
+        calendar views, dashboard analytics, and color-coded activities. 
         Includes AI coding agent experimentation for modern development workflows.
       </span>
     ),
     techStacks: ['SwiftUI', 'SwiftData', 'Swift'],
-    otherTechStacks: ['MVVM Architecture', 'Menu Bar Integration', 'Calendar Kit'],
+    otherTechStacks: ['MVVM Architecture', 'Calendar Kit'],
     category: 'macOS Development',
     links: getLinks('AndreasMaerki/WorkPulse')
   },
@@ -187,11 +187,11 @@ const projects: ProjectProps[] = [
     description: (
       <span>
         C# application developed during my diploma thesis in collaboration with Dynamic Design. 
-        Scans network structures using Simple Network Management Protocol (SNMP) for network infrastructure monitoring.
+        Monitors network infrastructure for performance and health analysis.
       </span>
     ),
-    techStacks: ['C#', 'SNMP', '.NET'],
-    otherTechStacks: ['Network Protocols', 'Windows Forms'],
+    techStacks: ['C#', '.NET'],
+    otherTechStacks: [],
     category: 'System Development',
     links: []
   },
@@ -199,9 +199,9 @@ const projects: ProjectProps[] = [
     slug: 'fastlane-automation',
     title: 'iOS CI/CD Pipeline',
     description:
-      'Complete iOS deployment automation using Fastlane. Includes automated testing, code signing, App Store Connect integration, and TestFlight distribution workflows.',
-    techStacks: ['Fastlane', 'Ruby', 'Xcode'],
-    otherTechStacks: ['Jenkins', 'Git', 'App Store Connect API'],
+      'Complete iOS deployment automation using Fastlane. Includes automated testing, code signing, and TestFlight distribution workflows.',
+    techStacks: ['Fastlane'],
+    otherTechStacks: [],
     category: 'DevOps',
     links: getLinks('ios-cicd-pipeline')
   }

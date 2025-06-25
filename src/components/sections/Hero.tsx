@@ -1,6 +1,7 @@
 import { lazy } from 'react'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
+import useSmoothScroll from '@/hooks/useSmootScroll'
 
 const ArrowDownSLineIcon = lazy(() => import('remixicon-react/ArrowDownSLineIcon'))
 const Spotlight = lazy(() => import('@/components/common/reusable/Spotlight'))
@@ -14,14 +15,10 @@ const Section = lazy(() => import('@/components/layouts/Section'))
 
 export default function Hero(): JSX.Element {
   const { animationClass } = useFadeInMounted()
+  const { scrollToElement } = useSmoothScroll()
+  
   const scrollToProjects = (): void => {
-    const projectsSection = document.getElementById('projects')
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }
+    scrollToElement('projects', -100) // -100px offset for navbar
   }
 
   return (

@@ -10,30 +10,24 @@ const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
 const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
 const Section = lazy(() => import('@/components/layouts/Section'))
 
-const filters: string[] = [
-  'Swift',
-  'SwiftUI',
-  'UIKit',
-  'Objective-C',
-  'Core Data',
-  'Combine',
-  'WidgetKit',
-  'CloudKit',
-  'Firebase',
-  'REST API',
-  'Bluetooth',
-  'Location Services',
-  'Push Notifications',
-  'In-App Purchases',
-  'Fastlane',
-  'Unit Testing'
-]
-
 export default function Projects(): JSX.Element {
   const { animationClass } = useFadeInMounted()
 
   const [filteredProjects, setFilteredProjects] = useState<Array<ProjectProps>>([...projects])
   const [selectedFilters, setSelectedFilters] = useState<Array<string>>([])
+
+  // Generate filters dynamically based on available tech stacks in projects
+  const availableFilters = Array.from(
+    new Set(
+      projects.flatMap((project: ProjectProps) => {
+        let allTechStacks: string[] = [...project.techStacks]
+        if (project.otherTechStacks) {
+          allTechStacks = [...allTechStacks, ...project.otherTechStacks]
+        }
+        return allTechStacks
+      })
+    )
+  ).sort()
 
   const filterProjects = (newValue: string): void => {
     if (selectedFilters.includes(newValue)) {
@@ -70,7 +64,7 @@ export default function Projects(): JSX.Element {
     />
   ))
 
-  const filterEntry: JSX.Element[] = filters.map(filter => (
+  const filterEntry: JSX.Element[] = availableFilters.map((filter: string) => (
     <Badge
       key={filter}
       className='animate-fade-in cursor-pointer !delay-200'
