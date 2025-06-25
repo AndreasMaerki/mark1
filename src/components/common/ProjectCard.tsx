@@ -19,7 +19,8 @@ export default function ProjectCard({
         key={index}
         className={clsx(
           'mr-2 last-of-type:mr-0',
-          'text-base font-medium text-primary-dark dark:text-primary-light'
+          'text-base font-medium text-primary-dark dark:text-primary-light',
+          'hover:scale-105 transition-transform duration-200'
         )}
       >
         {techStack}
@@ -38,6 +39,7 @@ export default function ProjectCard({
           target='_blank'
           rel='noreferrer'
           aria-label={link.label}
+          className="hover:scale-110 transition-transform duration-200 hover:text-purple-400"
         >
           {link.icon}
         </a>
@@ -46,7 +48,12 @@ export default function ProjectCard({
   )
 
   return (
-    <Card className='flex flex-col justify-between'>
+    <Card className={clsx(
+      'flex flex-col justify-between',
+      'hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300',
+      'hover:-translate-y-1 group',
+      'border border-transparent hover:border-purple-500/20'
+    )}>
       <header>
         <Heading3>
           <a
@@ -56,7 +63,8 @@ export default function ProjectCard({
             }
             className={clsx(
               'no-default z-0',
-              'group-hover:text-primary-dark group-hover:dark:text-primary-light'
+              'group-hover:text-primary-dark group-hover:dark:text-primary-light',
+              'transition-colors duration-200'
             )}
             target='_blank'
             rel='noreferrer'
