@@ -1,8 +1,8 @@
 {
-  "name": "louisite",
+  "name": "andreas-maerki-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://louisite.com",
+  "homepage": "https://andreasmaerki.dev",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -12,14 +12,14 @@ export default function HomePage(): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>Louis Gustavo | Software Engineer</title>
+        <title>Andreas Maerki | Senior iOS Developer & Swift Specialist</title>
         <meta
           name='description'
-          content='Louis Gustavo is a Software Engineer at Traveloka specializing in building web interfaces and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.'
+          content='Andreas Maerki is a Senior iOS Developer with 10+ years of experience specializing in Swift, SwiftUI, and mobile app development for retail and e-commerce platforms.'
         />
         <link
           rel='canonical'
-          href='https://louisite.com'
+          href='https://andreasmaerki.dev'
         />
       </Helmet>
       <Suspense fallback={<Preloader />}>

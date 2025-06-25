@@ -1,6 +1,7 @@
 import MailFillIcon from 'remixicon-react/MailFillIcon'
 import LinkedinFillIcon from 'remixicon-react/LinkedinFillIcon'
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
+import YoutubeLineIcon from 'remixicon-react/YoutubeLineIcon'
 import constants from '@/constants'
 import SocialProps from '@/types/SocialProps'
 
@@ -30,6 +31,16 @@ const social: SocialProps[] = [
     url: `https://github.com/${constants.social.github}`,
     icon: (
       <GithubFillIcon
+        size={24}
+        className='text-muted-dark dark:text-muted'
+      />
+    )
+  },
+  {
+    name: 'YouTube',
+    url: 'https://youtube.com/@andreasmaerki',
+    icon: (
+      <YoutubeLineIcon
         size={24}
         className='text-muted-dark dark:text-muted'
       />

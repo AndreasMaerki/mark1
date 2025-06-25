@@ -1,69 +1,101 @@
-# Hey👋, it's Louis Gustavo, Software Engineer at Traveloka
+# Hey👋, it's Andreas Maerki, Senior iOS Developer
 
-Ever since I was a high school student, software engineering has been my passion. I vividly recalled the time I first built a program for an Arduino Uno to make a miniature traffic light system. Additionally, modifying my [Fandom](https://www.fandom.com/) profile page's theme with HTML and CSS sparked my interest in software engineering. These experiences have significantly contributed to who I am today.
+As a passionate iOS developer with 10 years of experience, I bring extensive expertise in implementing high-quality mobile applications, particularly in retail. I've developed and enhanced apps for B2B and B2C clients, including major retail platforms like kkiosk and avec 24/7. My knowledge spans Swift, SwiftUI, and the latest iOS technologies. I excel in collaborating with agile teams and executing projects from conception to App Store publication, consistently delivering innovative solutions in the e-commerce space.
 
-I'm a **Software Engineer** at [Traveloka](https://traveloka.com) and **summa cum laude Computer Science graduate** from [BINUS University](https://binus.ac.id/) with **a GPA of 3.94**. During my yearlong internship as **Software Development Engineer** at [Blibli.com](https://blibli.com), I demonstrated my skills in software engineering and front-end development by developing micro-frontends and enhancing existing internal applications. With over three years of web development experience, my expertise spans across web development using Vue.js, React, JavaScript, SCSS, Laravel, PHP, SQL, Git, and various CI/CD tools.
+I'm currently a **Senior iOS Developer** at [Valora Schweiz AG](https://valora.com) where I develop new iOS applications and enhance existing ones using Swift, SwiftUI, and UIKit. I collaborate closely with iOS, Android, and backend developers to define new interfaces and conduct cross-platform code reviews to ensure feature parity across platforms.
 
-Previously, I assumed the role of **Manager of Web Development Division** of [HIMTI BINUS University](https://himti.or.id/), a computer science student association at BINUS University. Furthermore, I received the **Mentoring Scholarship Program** at BINUS University for three consecutive semesters, an honor granted to students mantaining a GPA above 3.5 while actively conducting peer-to-peer learning sessions for peers.
+My journey into software development began with a unique background in mechanical engineering and CNC machining, which taught me precision and attention to detail that I now apply to mobile development. I earned my **Dipl. Techniker HF in Computer Science** from ABB Technical School in Baden, making the transition from manufacturing to software engineering.
+
+## Experience
+
+### Recent Positions
+
+**Software Engineer iOS** at [Valora Schweiz AG](https://valora.com), Zürich  
+*November 2016 — December 2024*
+- Development of new iOS applications and enhancement of existing ones using Swift, SwiftUI, and UIKit
+- Collaboration with cross-platform teams to define interfaces and ensure feature parity
+- Implementation of retail and e-commerce solutions for major Swiss brands
+
+**Software Engineer iOS** at [BLINQ AG](https://blinq.ch), Zürich  
+*June 2015 — April 2016*
+- Development and enhancement of iOS applications in Objective-C and Swift
+- Conception and implementation of proprietary SDK for geo and Bluetooth beacon data collection
+- Occasional Android hotfixes and Google Play Store distribution
+
+**Software Engineer iOS** at [Goldbach Interactive](https://goldbach.com), Zürich  
+*November 2013 — February 2015*
+- Started as intern, promoted to lead developer
+- Conception and development of iOS applications for news, product presentation, and sales
+- Implementation of complex REST APIs for backend system integration
 
 ## Skills
 
-Here are some technologies that I am familiar with:
+Here are the technologies I specialize in:
 
-### Software engineering
+### iOS Development
 
-- Java
-- Spring Boot
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Node.js
-- Express
-- Next.js
-- TypeScript
-- Vue.js
-- React
-- Next.js
-- ESLint
-- jQuery
-- Tailwind CSS
-- Bootstrap
-- SCSS (BEM)
-- Laravel
-- PostgreSQL
-- MySQL
-- MongoDB
-- Prettier
+- Swift 5.x
+- SwiftUI
+- UIKit
+- Objective-C
+- Xcode
+- iOS SDK
+- Core Data
+- Core Animation
+- UserNotifications
+- MapKit
+- AVFoundation
+- Combine
+- WidgetKit
+- App Store Connect
+- TestFlight
 
-### Other languages
+### Mobile Technologies
 
-- C
-- C++
-- SQL
-- Python
-- PHP
-
-### Development tools
-
-- Amazon Web Services (AWS)
-- Terraform
-- Google Cloud Platform (GCP)
-- Netlify
+- REST APIs
+- JSON/XML parsing
+- Push notifications
+- Location services
+- Bluetooth/iBeacon
+- In-app purchases
+- CloudKit
 - Firebase
-- Git
-- GitHub
+- Realm Database
+- Alamofire
+- SDWebImage
+
+### Development Tools & Practices
+
+- Git/GitHub
+- GitLab
 - Bitbucket
 - Jira
 - Confluence
 - Jenkins
-- Sonar
-- Notion
-- Figma
-- Visual Studio Code
-- JetBrains IDEs
+- Fastlane
+- CocoaPods
+- Swift Package Manager
+- Carthage
+- Unit Testing (XCTest)
+- UI Testing
+- Instruments
+- Charles Proxy
+
+### Additional Skills
+
+- C# (SNMP development)
+- Network protocols
+- Agile/Scrum methodologies
+- Cross-platform collaboration
+- Technical leadership
+- App Store optimization
+
+## Hobbies & Interests
+
+Making music is my great passion. I also run a YouTube channel where I publish tutorials on electronic music production. My other hobbies include sports, traveling, and almost anything related to science.
 
 ## Contact Me
 
-Wanna ask me a question or simply say hi? Feel free to reach me via email at [louisgustavo07@gmail.com](mailto:louisgustavo07@gmail.com). I'd be delighted to hear from you.
+Interested in discussing iOS development or have a project in mind? Feel free to reach me via email at [andreas.maerki@gmail.com](mailto:andreas.maerki@gmail.com). I'd be delighted to hear from you.
 
-Additionally, you may find me on [GitHub](https://github.com/leejhlouis) and [LinkedIn](https://linkedin.com/in/louis-gustavo).
+You can also find me on [GitHub](https://github.com/andreasmaerki) and [LinkedIn](https://linkedin.com/in/andreas-maerki).

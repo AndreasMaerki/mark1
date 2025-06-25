@@ -1,7 +1,7 @@
 const social = {
-  mail: 'louisgustavo07@gmail.com',
-  github: 'leejhlouis',
-  linkedin: 'https://www.linkedin.com/in/louis-gustavo'
+  mail: 'andreas.maerki@gmail.com',
+  github: 'andreasmaerki',
+  linkedin: 'https://www.linkedin.com/in/andreas-maerki'
 }
 
 export default {

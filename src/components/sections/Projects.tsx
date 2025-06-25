@@ -1,6 +1,6 @@
 import { lazy, useEffect, useState } from 'react'
 import clsx from 'clsx'
-import { filters, projects } from '@/_data/projects'
+import projects, { filters } from '@/_data/projects'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import ProjectProps from '@/types/components/ProjectProps'
 

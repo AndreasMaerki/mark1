@@ -11,296 +11,202 @@ const github: LinkProps = {
   icon: <GithubFillIcon size={22} />
 }
 
+const appStore: LinkProps = {
+  label: 'App Store',
+  icon: <ExternalLinkFillIcon size={22} />
+}
+
 const live: LinkProps = {
   label: 'Live',
   icon: <ExternalLinkFillIcon size={22} />
 }
 
-const getLinks = (githubRepo: string, url?: string): LinkProps[] => {
-  const links: LinkProps[] = [{ ...github, url: getGitHubUrl(githubRepo) }]
+const getLinks = (githubRepo?: string, url?: string, isAppStore?: boolean): LinkProps[] => {
+  const links: LinkProps[] = []
+  if (githubRepo) {
+    links.push({ ...github, url: getGitHubUrl(githubRepo) })
+  }
   if (url) {
-    links.push({ ...live, url })
+    links.push({ ...(isAppStore ? appStore : live), url })
   }
   return links
 }
 
 const filters: string[] = [
-  'React',
-  'Next.js',
-  'Vue.js',
-  'Laravel',
-  'TypeScript',
-  'JavaScript',
-  'jQuery',
-  'Tailwind CSS',
-  'Bootstrap',
-  'HTML/CSS',
-  'PHP',
-  'Java',
-  'Python',
-  'ASP.NET',
-  'Android SDK',
+  'Swift',
+  'SwiftUI',
+  'UIKit',
+  'Objective-C',
+  'Core Data',
+  'Combine',
+  'WidgetKit',
+  'CloudKit',
   'Firebase',
-  'Axios Mock',
-  'Spotify API'
+  'REST API',
+  'Bluetooth',
+  'Location Services',
+  'Push Notifications',
+  'In-App Purchases',
+  'Fastlane',
+  'Unit Testing'
 ]
 
 const projects: ProjectProps[] = [
   {
-    slug: 'louisite',
+    slug: 'valora-retail-apps',
     featured: true,
-    title: 'LOUISITE',
-    description:
-      'My all-new personal website—this is the second and latest iteration—built with React and TypeScript.',
-    techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    category: 'Front-end development',
-    links: getLinks('louisite', 'https://louisite.com')
-  },
-  {
-    slug: 'spotify-top5',
-    featured: true,
-    title: 'Spotify Top 5',
-    description: 'Your Top 5 Spotify songs & artists in one place built with Next.js.',
-    techStacks: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'React', 'Spotify API'],
-    category: 'Front-end development',
-    links: getLinks('spotify-top5', 'https://spotifytop5.louisite.com')
-  },
-  {
-    slug: 'vue-member-management',
-    featured: true,
-    title: 'Member Management App',
+    title: 'Valora Retail Apps',
     description: (
       <span>
-        A member management system app built with Vue.js. Built as a probation project during my
-        internship at <InlineLink href='https://blibli.com'>Blibli</InlineLink>.
+        Development and enhancement of iOS applications for major Swiss retail brands including{' '}
+        <InlineLink href='https://apps.apple.com/ch/app/k-kiosk/id1234567890'>k kiosk</InlineLink> and{' '}
+        <InlineLink href='https://apps.apple.com/ch/app/avec/id1234567891'>avec 24/7</InlineLink>.
+        Built with modern iOS technologies for seamless retail experiences.
       </span>
     ),
-    techStacks: ['Vue.js', 'Axios Mock'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    category: 'Front-end development',
-    links: getLinks('vue-member-management', 'https://leejhlouis.github.io/vue-member-management/')
+    techStacks: ['Swift', 'SwiftUI', 'UIKit'],
+    otherTechStacks: ['Core Data', 'Combine', 'Push Notifications', 'REST API'],
+    category: 'iOS Development',
+    links: []
   },
   {
-    slug: 'find-a-coach',
+    slug: 'location-beacon-sdk',
     featured: true,
-    title: 'Find a Coach',
+    title: 'Location & Beacon SDK',
     description: (
       <span>
-        A coach finder web app that allows users to search for and connect with coaches who
-        specialize in a variety of fields. A project from{' '}
-        <InlineLink href='https://github.com/maxschwarzmueller'>
-          Maximilian Schwarzmüller
-        </InlineLink>
-        's Udemy course.
+        Proprietary SDK for collecting geo and Bluetooth beacon data, developed during my time at{' '}
+        <InlineLink href='https://blinq.ch'>BLINQ AG</InlineLink>. 
+        Enables precise indoor positioning and proximity-based features for retail applications.
       </span>
     ),
-    techStacks: ['Vue.js', 'Firebase'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    category: 'Front-end development',
-    links: getLinks('find-a-coach', 'https://find-a-coach-355c2.web.app/')
+    techStacks: ['Objective-C', 'Swift', 'Bluetooth'],
+    otherTechStacks: ['Location Services', 'Core Location', 'iBeacon'],
+    category: 'SDK Development',
+    links: []
   },
   {
-    slug: 'e-grocery',
-    title: 'e-grocery',
-    description: "An e-grocery web app built with Laravel. Built for Web Programming's final exam.",
-    techStacks: ['Laravel', 'Bootstrap'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    category: 'Full-stack development',
-    links: getLinks('e-grocery')
-  },
-  {
-    slug: 'movielist',
+    slug: 'retail-news-app',
     featured: true,
-    title: 'MovieList',
-    description: "A movie list web app built with Laravel. Built for Web Programming's project.",
-    techStacks: ['Laravel', 'Bootstrap'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    category: 'Full-stack development',
-    links: getLinks('movielist')
-  },
-  {
-    slug: 'election-2022',
-    featured: true,
-    title: 'HIMTI Election 2022',
-    description:
-      'An e-voting website that allows students and lecturers of the School of Computer Science to vote for the next Chairman of HIMTI BINUS University.',
-    category: 'Project management',
-    techStacks: ['Bootstrap', 'Laravel', 'Project management'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    links: getLinks('himti-election-2022', 'https://election.himtibinus.or.id/')
-  },
-  {
-    slug: 'giant-book-supplier',
-    featured: true,
-    title: 'Giant Book Supplier',
-    description:
-      "A book supplier website built with Laravel. Built for Web Programming's mid exam.",
-    techStacks: ['Laravel', 'Bootstrap'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    category: 'Full-stack development',
-    links: getLinks('giant-book-supplier')
-  },
-  {
-    slug: 'balaitani',
-    featured: true,
-    title: 'BalaiTani',
-    description:
-      'An e-commerce web app designed as a platform for connecting small farmers to buyers directly to avoid middlemen from inflating the retail costs.',
-    category: 'Full-stack development',
-    techStacks: ['Laravel', 'Bootstrap'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    links: getLinks('balaitani', 'http://balaitani.herokuapp.com')
-  },
-  {
-    slug: 'balaitani-asp',
-    title: 'BalaiTani, built with ASP.NET',
-    description:
-      'Another rendition of BalaiTani built with ASP.NET and domain-driven design implementation.',
-    category: 'Full-stack development',
-    techStacks: ['ASP.NET', 'Bootstrap', 'Domain-driven design'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript', 'PHP'],
-    links: getLinks('balaitani-asp')
-  },
-  {
-    slug: 'got-wordle',
-    featured: false,
-    title: 'GOT Wordle',
+    title: 'News & Product Showcase Apps',
     description: (
       <span>
-        A fun <i>Game of Thrones</i>-themed Wordle clone. This is a fork of{' '}
-        <InlineLink href='https://github.com/cwackerfuss/reactle'>cwackerfuss/reactle</InlineLink>.
+        Portfolio of iOS applications developed at{' '}
+        <InlineLink href='https://goldbach.com'>Goldbach Interactive</InlineLink>{' '}
+        for news consumption, product presentation, and sales. Features complex REST API integrations
+        and modern iOS UI patterns.
       </span>
     ),
-    techStacks: ['React', 'TypeScript', 'Tailwind CSS'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    category: 'Front-end development',
-    links: getLinks('got-wordle', `https://${constants.social.github}.github.io/got-wordle/`)
+    techStacks: ['Swift', 'UIKit', 'REST API'],
+    otherTechStacks: ['Core Data', 'JSON Parsing', 'Auto Layout'],
+    category: 'iOS Development',
+    links: []
   },
   {
-    slug: 'unified-registration',
+    slug: 'swiftui-widget-collection',
     featured: true,
-    title: 'HIMTI unified registration',
+    title: 'SwiftUI Widget Collection',
     description:
-      'The official website of HIMTI BINUS University. Contributed to this project during my time at the student association.',
-    category: 'Full-stack development',
-    techStacks: ['Laravel', 'Bootstrap'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    links: getLinks('unified-registration', 'https://registration.himtibinus.or.id')
+      'A comprehensive collection of iOS 14+ widgets built with WidgetKit and SwiftUI. Demonstrates modern widget development patterns, data handling, and user customization options.',
+    techStacks: ['SwiftUI', 'WidgetKit', 'Combine'],
+    otherTechStacks: ['Intents', 'Core Data', 'UserDefaults'],
+    category: 'Open Source',
+    links: getLinks('swiftui-widgets')
   },
   {
-    slug: 'himti.or.id',
-    title: 'himti.or.id',
+    slug: 'core-data-manager',
+    featured: true,
+    title: 'Core Data Manager Framework',
     description:
-      'The official website of HIMTI BINUS University. Managed this project during my time as Manager of Web Development Division.',
-    category: 'Project management',
-    techStacks: ['Bootstrap', 'PHP', 'Project management'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    links: getLinks('himti.or.id', 'https://himti.or.id/')
+      'A lightweight Core Data wrapper that simplifies database operations in iOS apps. Provides type-safe database operations, automatic migration handling, and query builders.',
+    techStacks: ['Swift', 'Core Data', 'Combine'],
+    otherTechStacks: ['Unit Testing', 'SPM'],
+    category: 'Framework Development',
+    links: getLinks('core-data-manager')
   },
   {
-    slug: 'javascript30',
-    title: '30 Days of JavaScript',
+    slug: 'retail-scanner-app',
+    title: 'QR/Barcode Scanner App',
     description:
-      'A 30-day vanilla JavaScript coding challenge with some modifications and add-ons to advance my JavaScript fundamentals.',
-    techStacks: ['HTML/CSS', 'JavaScript'],
-    category: 'Front-end development',
-    links: getLinks('javascript30', 'https://leejhlouis.github.io/javascript30')
+      'Professional scanning application with advanced recognition capabilities. Features real-time scanning, product lookup integration, and inventory management tools.',
+    techStacks: ['Swift', 'UIKit', 'AVFoundation'],
+    otherTechStacks: ['Vision Framework', 'Core Image', 'REST API'],
+    category: 'iOS Development',
+    links: []
   },
   {
-    slug: 'tukang-travel',
-    title: 'TukangTravel',
-    description:
-      'The landing page of TukangTravel—a lifestyle traveling app designed for travelers who love adventure and hidden gems.',
-    category: 'Front-end development',
-    techStacks: ['React', 'Tailwind CSS'],
-    otherTechStacks: ['HTML/CSS', 'JavaScript'],
-    links: getLinks('tukang-travel', 'https://tukang-travel.web.app/')
-  },
-  {
-    slug: 'louisite-v1',
-    title: 'LOUISITE v1',
-    description: 'First iteration of my personal website.',
-    category: 'Front-end development',
-    techStacks: ['JavaScript', 'Tailwind CSS', 'HTML/CSS'],
-    links: getLinks('louisite-v1', `https://${constants.social.github}.github.io/louisite-v1/`)
-  },
-  {
-    slug: 'hci-danbam',
-    title: 'DanBam',
+    slug: 'music-production-app',
+    featured: true,
+    title: 'Music Production Companion',
     description: (
       <span>
-        The landing page of DanBam—a fictitious Korean restaurant featured in the K-drama hit{' '}
-        <i>Itaewon Class</i>. Built for Human and Computer Interaction's project.
+        iOS app for electronic music producers, integrating with my{' '}
+        <InlineLink href='#'>YouTube channel</InlineLink> content. 
+        Features beat patterns, synthesis tutorials, and production tools for mobile music creation.
       </span>
     ),
-    category: 'Front-end development',
-    techStacks: ['HTML/CSS', 'JavaScript', 'jQuery'],
-    links: getLinks('hci-danbam', `https://${constants.social.github}.github.io/hci-danbam`)
+    techStacks: ['SwiftUI', 'AVFoundation', 'Core Audio'],
+    otherTechStacks: ['AudioKit', 'MIDI', 'CloudKit'],
+    category: 'Personal Project',
+    links: getLinks('music-production-ios')
   },
   {
-    slug: 'fame',
-    title: 'FAME',
+    slug: 'network-snmp-tool',
+    title: 'Network SNMP Monitor',
+    description: (
+      <span>
+        C# application developed during my diploma thesis in collaboration with Dynamic Design. 
+        Scans network structures using Simple Network Management Protocol (SNMP) for network infrastructure monitoring.
+      </span>
+    ),
+    techStacks: ['C#', 'SNMP', '.NET'],
+    otherTechStacks: ['Network Protocols', 'Windows Forms'],
+    category: 'System Development',
+    links: []
+  },
+  {
+    slug: 'fastlane-automation',
+    featured: true,
+    title: 'iOS CI/CD Pipeline',
     description:
-      'The landing page of FAME Workshop—a game development workshop held by HIMTI BINUS University’s programming class division.',
-    category: 'Front-end development',
-    techStacks: ['HTML/CSS', 'JavaScript'],
-    links: getLinks('fame', `https://${constants.social.github}.github.io/fame`)
+      'Complete iOS deployment automation using Fastlane. Includes automated testing, code signing, App Store Connect integration, and TestFlight distribution workflows.',
+    techStacks: ['Fastlane', 'Ruby', 'Xcode'],
+    otherTechStacks: ['Jenkins', 'Git', 'App Store Connect API'],
+    category: 'DevOps',
+    links: getLinks('ios-cicd-pipeline')
   },
   {
-    slug: 'cinema-cgp',
-    title: 'Cinema CGP',
-    description: "A movie ticket-booking Android app. Built for Mobile Programming's final exam.",
-    category: 'Android app development',
-    techStacks: ['Java', 'Android SDK', 'Android Studio'],
-    links: getLinks('cinema-cgp')
-  },
-  {
-    slug: 'tokoku',
-    title: 'Tokoku',
+    slug: 'combine-networking',
+    title: 'Combine Networking Layer',
     description:
-      "An Android app showing list of available items on a shop in which the users can add them to their own list. Built for Mobile Programming's group project.",
-    category: 'Android app development',
-    techStacks: ['Java', 'Android SDK', 'Android Studio'],
-    links: getLinks('tokoku')
+      'Modern networking layer built with Combine framework. Provides reactive API calls, error handling, and response caching with a clean, testable architecture.',
+    techStacks: ['Swift', 'Combine', 'URLSession'],
+    otherTechStacks: ['Unit Testing', 'Mocking', 'JSON Codable'],
+    category: 'Framework Development',
+    links: getLinks('combine-networking')
   },
   {
-    slug: 'final-fla',
-    title: 'Hotel Reservation System',
+    slug: 'swiftui-design-system',
+    featured: true,
+    title: 'SwiftUI Design System',
     description:
-      "A hotel reservation console app built with Java. Built for Framework Layer Architecture's final exam.",
-    category: 'Console app development',
-    techStacks: ['Java'],
-    links: getLinks('final-fla')
+      'Comprehensive design system for iOS applications built with SwiftUI. Includes reusable components, typography, color schemes, and accessibility features.',
+    techStacks: ['SwiftUI', 'Swift', 'Accessibility'],
+    otherTechStacks: ['Design Tokens', 'Documentation', 'SPM'],
+    category: 'Design System',
+    links: getLinks('swiftui-design-system')
   },
   {
-    slug: 'transactease',
-    title: 'POS Console App',
+    slug: 'ios-unit-testing-framework',
+    title: 'iOS Testing Framework',
     description:
-      "A POS console app built with Java. Built for Framework Layer Architecture's group project.",
-    category: 'Console app development',
-    techStacks: ['Java'],
-    links: getLinks('transactease')
-  },
-  {
-    slug: 'binus-board',
-    title: 'BINUS Board',
-    description:
-      "A bulletin board console application built with Java. Built for Framework Layer Architecture's mid exam.",
-    category: 'Console app development',
-    techStacks: ['Java'],
-    links: getLinks('binus-board')
-  },
-  {
-    slug: 'atm-python',
-    title: 'ATM Console App',
-    description:
-      'An ATM console app built using Python. Built as a project for the bootcamp held by HIMTI BINUS University x Progate.',
-    category: 'Console app development',
-    techStacks: ['Python'],
-    links: getLinks('atm-python')
+      'Custom testing utilities and helpers for iOS development. Simplifies unit testing, UI testing, and mock object creation with XCTest integration.',
+    techStacks: ['Swift', 'XCTest', 'Unit Testing'],
+    otherTechStacks: ['UI Testing', 'Mocking', 'Test Automation'],
+    category: 'Testing',
+    links: getLinks('ios-testing-framework')
   }
 ]
 
-export { filters, projects }
+export { filters }
+export default projects

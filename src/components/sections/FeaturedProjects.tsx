@@ -1,6 +1,6 @@
 import { lazy, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
-import { projects } from '@/_data/projects'
+import projects from '@/_data/projects'
 import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 import clsx from 'clsx'
 
@@ -18,10 +18,10 @@ export default function Projects(): JSX.Element {
 
   const projectsEntry: JSX.Element[] = projects
     .filter(({ featured }) => !!featured)
-    .map(project => (
+    .map((project, index) => (
       <ProjectCard
         {...project}
-        key={project.id}
+        key={project.slug || index}
       />
     ))
 
