@@ -1,5 +1,5 @@
 const social = {
-  mail: 'andreas.maerki@gmail.com',
+  mail: 'a.maerki@gmx.ch',
   github: 'andreasmaerki',
   linkedin: 'https://www.linkedin.com/in/andreas-maerki'
 }

@@ -108,7 +108,7 @@ Making music is my great passion. I also run a YouTube channel where I publish t
 
 ## Contact Me
 
-Interested in discussing iOS development or have a project in mind? Feel free to reach me via email at [andreas.maerki@gmail.com](mailto:andreas.maerki@gmail.com). I'd be delighted to hear from you.
+Interested in discussing iOS development or have a project in mind? Feel free to reach me via email at [a.maerki@gmx.ch](mailto:a.maerki@gmx.ch). I'd be delighted to hear from you.
 
 You can also find me on [GitHub](https://github.com/andreasmaerki) and [LinkedIn](https://linkedin.com/in/andreas-maerki).`
 
