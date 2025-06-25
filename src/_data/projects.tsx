@@ -53,19 +53,64 @@ const filters: string[] = [
 
 const projects: ProjectProps[] = [
   {
-    slug: 'valora-retail-apps',
+    slug: 'k-kiosk-app',
     featured: true,
-    title: 'Valora Retail Apps',
+    title: 'k kiosk App',
     description: (
       <span>
-        Development and enhancement of iOS applications for major Swiss retail brands including{' '}
-        <InlineLink href='https://apps.apple.com/ch/app/k-kiosk/id1234567890'>k kiosk</InlineLink> and{' '}
-        <InlineLink href='https://apps.apple.com/ch/app/avec/id1234567891'>avec 24/7</InlineLink>.
-        Built with modern iOS technologies for seamless retail experiences.
+        Swiss retail loyalty app with stamp cards, coupons, and rewards system. Features include digital stamp collection, 
+        push notifications for offers, and seamless QR code redemption. Ranked #73 in Shopping category with 4.4★ rating.
       </span>
     ),
-    techStacks: ['Swift', 'SwiftUI', 'UIKit'],
-    otherTechStacks: ['Core Data', 'Combine', 'Push Notifications', 'REST API'],
+    techStacks: ['SwiftUI', 'Swift', 'REST API'],
+    otherTechStacks: ['Combine', 'Swift Concurrency', 'Push Notifications', 'Core Data'],
+    category: 'iOS Development',
+    links: getLinks(undefined, 'https://apps.apple.com/ch/app/k-kiosk/id1215644802?l=en-GB', true)
+  },
+  {
+    slug: 'brezelkonig-app',
+    featured: true,
+    title: 'Brezelkönig App',
+    description: (
+      <span>
+        Loyalty and payment app for Switzerland's leading pretzel chain. Features crown collection system, 
+        tier-based rewards (Bronze/Silver/Gold), integrated payments, and store locator. Ranked #14 in Food & Drink with 4.2★ rating.
+      </span>
+    ),
+    techStacks: ['SwiftUI', 'Swift', 'REST API'],
+    otherTechStacks: ['Combine', 'Swift Concurrency', 'Apple Pay', 'Core Location'],
+    category: 'iOS Development',
+    links: getLinks(undefined, 'https://apps.apple.com/ch/app/brezelk%C3%B6nig/id1526693066?l=en-GB', true)
+  },
+  {
+    slug: 'avec-247-app',
+    featured: true,
+    title: 'avec 24/7: Scan & Pay',
+    description: (
+      <span>
+        Autonomous shopping app enabling 24/7 retail experiences. Features QR code entry, barcode scanning, 
+        and integrated payments for unmanned stores. Revolutionary retail technology with 4.5★ rating from 839+ reviews.
+      </span>
+    ),
+    techStacks: ['SwiftUI', 'Swift', 'REST API'],
+    otherTechStacks: ['Combine', 'Swift Concurrency', 'AVFoundation', 'Vision Framework'],
+    category: 'iOS Development',
+    links: getLinks(undefined, 'https://apps.apple.com/ch/app/avec-24-7-scan-pay/id1454000074?l=en-GB', true)
+  },
+  {
+    slug: 'blinq-dating-app',
+    featured: true,
+    title: 'BLINQ Dating App',
+    description: (
+      <span>
+        Swiss dating app that competed with Tinder, featuring innovative location-based matching and the famous "How Hot" AI feature 
+        developed with ETH. Used iBeacon technology for proximity notifications when users were in the same venue. 
+        Featured in{' '}
+        <InlineLink href='https://www.washingtonpost.com'>Washington Post</InlineLink> for its AI attractiveness rating system.
+      </span>
+    ),
+    techStacks: ['Objective-C', 'UIKit', 'REST API'],
+    otherTechStacks: ['iBeacon', 'Core Location', 'Push Notifications', 'Machine Learning'],
     category: 'iOS Development',
     links: []
   },
@@ -77,7 +122,8 @@ const projects: ProjectProps[] = [
       <span>
         Proprietary SDK for collecting geo and Bluetooth beacon data, developed during my time at{' '}
         <InlineLink href='https://blinq.ch'>BLINQ AG</InlineLink>. 
-        Enables precise indoor positioning and proximity-based features for retail applications.
+        Enables precise indoor positioning and proximity-based features for retail applications. 
+        Technology later sold to outdoor advertising company APG for location-based advertising.
       </span>
     ),
     techStacks: ['Objective-C', 'Swift', 'Bluetooth'],
@@ -93,18 +139,51 @@ const projects: ProjectProps[] = [
       <span>
         Portfolio of iOS applications developed at{' '}
         <InlineLink href='https://goldbach.com'>Goldbach Interactive</InlineLink>{' '}
-        for news consumption, product presentation, and sales. Features complex REST API integrations
-        and modern iOS UI patterns.
+        including all AZ Medien newspaper titles, B2B applications for Swisscom and Hyundai. 
+        Features complex REST API integrations, news consumption, product presentation, and sales functionality 
+        with modern iOS UI patterns.
       </span>
     ),
-    techStacks: ['Swift', 'UIKit', 'REST API'],
-    otherTechStacks: ['Core Data', 'JSON Parsing', 'Auto Layout'],
+    techStacks: ['Objective-C', 'Swift', 'UIKit'],
+    otherTechStacks: ['REST API', 'Core Data', 'JSON Parsing', 'Auto Layout'],
     category: 'iOS Development',
     links: []
   },
   {
-    slug: 'swiftui-widget-collection',
+    slug: 'workpulse-macos',
     featured: true,
+    title: 'WorkPulse',
+    description: (
+      <span>
+        macOS time tracking application built with SwiftUI and SwiftData. Features multiple simultaneous activity tracking,
+        calendar views, dashboard analytics, menu bar integration, and color-coded activities. 
+        Includes AI coding agent experimentation for modern development workflows.
+      </span>
+    ),
+    techStacks: ['SwiftUI', 'SwiftData', 'Swift'],
+    otherTechStacks: ['MVVM Architecture', 'Menu Bar Integration', 'Calendar Kit'],
+    category: 'macOS Development',
+    links: getLinks('AndreasMaerki/WorkPulse')
+  },
+  {
+    slug: 'cybergram-ios',
+    featured: true,
+    title: 'Cybergram',
+    description: (
+      <span>
+        Instagram clone built with SwiftUI and Firebase featuring comprehensive social media functionality. 
+        Includes user authentication with sign-up and login flows, photo upload capabilities with Firebase Storage, 
+        customizable user profiles with profile pictures, real-time feed displaying posts from other users, 
+        and cloud-based data synchronization using Firestore for seamless user experience across devices.
+      </span>
+    ),
+    techStacks: ['SwiftUI', 'Firebase', 'Swift'],
+    otherTechStacks: ['Firebase Auth', 'Firestore', 'Firebase Storage', 'Cloud Services'],
+    category: 'iOS Development',
+    links: getLinks('AndreasMaerki/Cybergram')
+  },
+  {
+    slug: 'swiftui-widget-collection',
     title: 'SwiftUI Widget Collection',
     description:
       'A comprehensive collection of iOS 14+ widgets built with WidgetKit and SwiftUI. Demonstrates modern widget development patterns, data handling, and user customization options.',
@@ -115,7 +194,6 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'core-data-manager',
-    featured: true,
     title: 'Core Data Manager Framework',
     description:
       'A lightweight Core Data wrapper that simplifies database operations in iOS apps. Provides type-safe database operations, automatic migration handling, and query builders.',
@@ -136,7 +214,6 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'music-production-app',
-    featured: true,
     title: 'Music Production Companion',
     description: (
       <span>
@@ -166,7 +243,6 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'fastlane-automation',
-    featured: true,
     title: 'iOS CI/CD Pipeline',
     description:
       'Complete iOS deployment automation using Fastlane. Includes automated testing, code signing, App Store Connect integration, and TestFlight distribution workflows.',
@@ -187,7 +263,6 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'swiftui-design-system',
-    featured: true,
     title: 'SwiftUI Design System',
     description:
       'Comprehensive design system for iOS applications built with SwiftUI. Includes reusable components, typography, color schemes, and accessibility features.',
@@ -195,18 +270,9 @@ const projects: ProjectProps[] = [
     otherTechStacks: ['Design Tokens', 'Documentation', 'SPM'],
     category: 'Design System',
     links: getLinks('swiftui-design-system')
-  },
-  {
-    slug: 'ios-unit-testing-framework',
-    title: 'iOS Testing Framework',
-    description:
-      'Custom testing utilities and helpers for iOS development. Simplifies unit testing, UI testing, and mock object creation with XCTest integration.',
-    techStacks: ['Swift', 'XCTest', 'Unit Testing'],
-    otherTechStacks: ['UI Testing', 'Mocking', 'Test Automation'],
-    category: 'Testing',
-    links: getLinks('ios-testing-framework')
   }
 ]
 
-export { filters }
+export const featuredProjects = projects.filter(project => project.featured)
+
 export default projects
