@@ -24,7 +24,7 @@ export default function Footer(): JSX.Element {
         <Title size='lg' />
       </div>
       <div className='flex flex-col justify-between pb-4 sm:flex-row sm:items-center'>
-        <p className='pb-3 font-light sm:pb-0'>Made with ❤️ by Louis.</p>
+        <p className='pb-3 font-light sm:pb-0'>Made with ❤️ by Andreas.</p>
         <div className='flex flex-col flex-wrap items-start gap-3 sm:flex-row sm:items-center sm:gap-0 sm:space-x-6'>
           <NavLinks />
           <SocialMediaLinks />

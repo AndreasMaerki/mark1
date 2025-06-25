@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/blog/rss': {
-        target: 'https://medium.com/@leejhlouis/feed',
+        target: 'https://medium.com/@andreasmaerki/feed',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/blog\/rss/, '')
       }

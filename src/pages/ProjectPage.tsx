@@ -11,14 +11,14 @@ export default function AboutPage(): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>Projects by Louis Gustavo | Full-stack Development</title>
+        <title>Projects by Andreas Maerki | iOS Development</title>
         <meta
           name='description'
-          content="Explore Louis Gustavo's full-stack software projects featuring Spring Boot, Vue.js, Next.js, React, Laravel, and more!"
+          content="Explore Andreas Maerki's iOS development projects featuring Swift, SwiftUI, UIKit, and mobile app solutions!"
         />
         <link
           rel='canonical'
-          href='https://louisite.com/projects'
+          href='https://andreasmaerki.dev/projects'
         />
       </Helmet>
       <Suspense fallback={<Preloader />}>

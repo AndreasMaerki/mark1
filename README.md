@@ -1,61 +1,89 @@
-# [louisite.com](https://louisite.com/)
+# [andreasmaerki.dev](https://andreasmaerki.dev/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5ed574c-98f0-4d7e-bec5-ebcf23f65039/deploy-status)](https://app.netlify.com/sites/louisite/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/12345678-1234-1234-1234-123456789012/deploy-status)](https://app.netlify.com/sites/mark1/deploys)
 
-**louisite.com** (stylized as LOUI**SITE**, a portmanteau of _Louis_ and _site_) is my personal website—this is the second iteration—showcasing my accomplishments. This website was built with [Tailwind CSS](https://tailwindcss.com/), [React](https://reactjs.org/), and [TypeScript](https://www.typescriptlang.org/).
+**andreasmaerki.dev** (codenamed **MARK1**) is my personal portfolio website showcasing my iOS development expertise and projects. This website is built with [Tailwind CSS](https://tailwindcss.com/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/).
 
-[Visit the website here](https://louisite.com/)
+[Visit the website here](https://andreasmaerki.dev/)
 
-![Preview](src/assets/images/preview.png)
+## ✨ Features
 
-## Overview
+- **Modern iOS Development Portfolio**: Showcasing 10+ years of Swift, SwiftUI, and UIKit expertise
+- **Responsive Design**: Built with Tailwind CSS for optimal viewing on all devices
+- **Fast Performance**: Powered by Vite for lightning-fast development and builds
+- **Type Safety**: Full TypeScript integration for robust code
+- **SEO Optimized**: Proper meta tags and structured data
 
-### Background
+## 🎯 Purpose
 
-As an undergraduate looking for opportunities, I realized that I needed to build a visually appealing personal website to showcase my accomplishments and to provide hiring managers with a better idea of who I am.
+This portfolio showcases my journey as an iOS developer, featuring:
 
-### The problem
+- **Professional Experience**: From CNC machining to iOS development
+- **Technical Projects**: Swift, SwiftUI, and mobile app development
+- **Skills & Expertise**: 10+ years of mobile development experience
+- **Personal Interests**: Music production and technology
 
-[The first iteration](https://github.com/leejhlouis/louisite-v1) failed to highlight my featured projects, the most important aspect of this website, due to other sections—to name a few, my experience, educational background, and my skills—taking precedence over the works section. In addition, I was personally not satisfied with the first iteration’s appearance. This prompted me to develop the second iteration with an all-new and refreshed layout and appearance.
+## 📱 About
 
-### A solution
+I'm Andreas Maerki, a Senior iOS Developer with extensive experience in mobile application development. The content for this website comes from my professional background in iOS development, including work at Valora Schweiz AG, BLINQ AG, and Goldbach Interactive.
 
-To prevent stuff from bloating the single index page, I decided to build a multi-page website, in which I extracted the about me section to another page. I also merged several sections—my experience, educational background, and skills—to the “about me” page to minimize content. The website should not repeat what my [LinkedIn](https://www.linkedin.com/in/louis-gustavo) page does.
+## 🛠 Built With
 
-Originally, I intended to feature a detailed page for each work. However, amidst the development phase, I personally thought that it would be better if I include them on their respective GitHub repository’s `README.md` for easier content management.
+This website leverages modern web technologies:
 
-On top of that, I implemented glassmorphism—a frosted glass effect popularized by [Michal Malewicz](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9)—in the navbar with Tailwind CSS’s [backdrop blur](https://tailwindcss.com/docs/backdrop-blur) utility classes. I also created a dark mode for this iteration by utilizing Tailwind CSS’s [dark mode variant](https://tailwindcss.com/docs/dark-mode). By default, this website uses the users’ preferred color theme, although the users can also manually override the theme.
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Build Tool**: Vite (migrated from CRA for better performance)
+- **Deployment**: Netlify
+- **Icons**: Remix Icons
+- **Routing**: React Router
 
-### Technologies
+## 🚀 Getting Started
 
-The website was initially bootstrapped with [Create React App](https://create-react-app.dev/) (CRA) and built with Tailwind CSS, React, and TypeScript. Tailwind CSS was used as the CSS framework for its practical utility classes to build the interface. Meanwhile, React was chosen due to its beautifully curated JavaScript library for UI components and TypeScript was chosen due to its type-checking feature. Furthermore, I use `.markdown` for managing the content of the [about me](https://louisite.com/about) page.
+To run this project locally:
 
-In 2023, I [migrated](https://github.com/leejhlouis/louisite.com/pull/9) CRA to [Vite](https://vitejs.dev/), a simpler and faster build tool alternative to CRA.
+1. Clone the repository
 
-## How to run the website locally
-
-1. Clone this repository to your local machine
-
+```bash
+git clone https://github.com/andreasmaerki/mark1.git
 ```
-git clone https://github.com/leejhlouis/louisite.com.git
+
+2. Change directory to `/mark1`, the project directory
+
+```bash
+cd mark1
 ```
 
-2. Change directory to `/louisite.com`, the project directory
+3. Install the dependencies
 
-```
-cd louisite.com
-```
-
-3. Install the dependencies locally (**make sure to have Node.js or any other package manager installed**)
-
-```
+```bash
 npm install
 ```
 
-4. Run the website in the development mode
+4. Start the development server
 
-```
+```bash
 npm run dev
 ```
 
-5. Open http://localhost:5173 to view the website.
+5. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## 📜 Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev` - Runs the app in development mode
+- `npm run build` - Builds the app for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check for code issues
+
+## 🌟 Key Sections
+
+- **Hero**: Introduction and professional headline
+- **Projects**: Featured iOS development projects and frameworks
+- **About**: Detailed background and experience
+- **Skills**: iOS technologies and development tools
+- **Contact**: Professional contact information
+
+---
+
+Made with ❤️ by Andreas Maerki

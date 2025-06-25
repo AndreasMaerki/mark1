@@ -60,14 +60,14 @@ export default function BlogPage(): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>Blog | Software Engineering Insights by Louis Gustavo</title>
+        <title>Blog | iOS Development Insights by Andreas Maerki</title>
         <meta
           name='description'
-          content="Read Louis Gustavo's blog for software engineering insights. Learn how I built my portfolio with React, TypeScript, and Tailwind CSS."
+          content="Read Andreas Maerki's blog for iOS development insights. Learn about Swift, SwiftUI, and mobile app development."
         />
         <link
           rel='canonical'
-          href='https://louisite.com/blog'
+          href='https://andreasmaerki.dev/blog'
         />
       </Helmet>
       <Suspense fallback={<Preloader />}>

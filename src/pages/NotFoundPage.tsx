@@ -8,7 +8,7 @@ export default function NotFoundPage(): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Louis Gustavo</title>
+        <title>Page Not Found | Andreas Maerki</title>
         <meta
           name='robots'
           content='noindex, nofollow'

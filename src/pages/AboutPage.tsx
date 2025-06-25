@@ -24,14 +24,14 @@ export default function AboutPage(): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>About | Louis Gustavo</title>
+        <title>About | Andreas Maerki</title>
         <meta
           name='description'
-          content='Learn the journey of Louis Gustavo, a Software Engineer at Traveloka with 3+ years of experience of developing web and backend systems using Spring Boot, Next.js, Vue.js, React, Laravel, and more.'
+          content='Learn the journey of Andreas Maerki, a Senior iOS Developer with 10+ years of experience developing mobile applications using Swift, SwiftUI, and UIKit for retail and e-commerce platforms.'
         />
         <link
           rel='canonical'
-          href='https://louisite.com/about'
+          href='https://andreasmaerki.dev/about'
         />
       </Helmet>
       <Suspense fallback={<Preloader />}>

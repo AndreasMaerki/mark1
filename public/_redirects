@@ -1,6 +1,6 @@
-http://louisite.netlify.app/* http://louisite.com/:splat 301
-https://louisite.netlify.app/* https://louisite.com/:splat 301
+http://mark1.netlify.app/* http://andreasmaerki.dev/:splat 301
+https://mark1.netlify.app/* https://andreasmaerki.dev/:splat 301
 
-/blog/rss  https://medium.com/@leejhlouis/feed  200
+/blog/rss  https://medium.com/@andreasmaerki/feed  200
 
 /* /index.html 200

@@ -1,11 +1,11 @@
 [[redirects]]
-  from = "https://louisite.netlify.app/"
-  to = "https://louisite.com/"
-  status = 301
-  force = true
+from = "https://mark1.netlify.app/"
+to = "https://andreasmaerki.dev/"
+status = 301
+force = true
 
 [[redirects]]
-  from = "https://louisite.netlify.app/*"
-  to = "https://louisite.com/:splat"
+from = "https://mark1.netlify.app/*"
+to = "https://andreasmaerki.dev/:splat"
   status = 301
   force = true
