@@ -16,7 +16,7 @@ export default function Title({ size }: SizeProps): JSX.Element {
       className='title'
     >
       <p className={clsx('pb-0 font-light uppercase', textSize())}>
-        LOUI<span className='font-bold'>SITE</span>
+        ANDY'<span className='font-bold'>SITE</span>
       </p>
     </Link>
   )
