@@ -1,6 +1,6 @@
 import { lazy, useEffect, useState } from 'react'
 import clsx from 'clsx'
-import projects, { filters } from '@/_data/projects'
+import projects from '@/_data/projects'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import ProjectProps from '@/types/components/ProjectProps'
 
@@ -9,6 +9,25 @@ const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading
 const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
 const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
 const Section = lazy(() => import('@/components/layouts/Section'))
+
+const filters: string[] = [
+  'Swift',
+  'SwiftUI',
+  'UIKit',
+  'Objective-C',
+  'Core Data',
+  'Combine',
+  'WidgetKit',
+  'CloudKit',
+  'Firebase',
+  'REST API',
+  'Bluetooth',
+  'Location Services',
+  'Push Notifications',
+  'In-App Purchases',
+  'Fastlane',
+  'Unit Testing'
+]
 
 export default function Projects(): JSX.Element {
   const { animationClass } = useFadeInMounted()
@@ -47,7 +66,7 @@ export default function Projects(): JSX.Element {
   const projectsEntry: JSX.Element[] = filteredProjects.map(project => (
     <ProjectCard
       {...project}
-      key={project.id}
+      key={project.slug}
     />
   ))
 

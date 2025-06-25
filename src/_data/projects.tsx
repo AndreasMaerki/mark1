@@ -167,7 +167,6 @@ const projects: ProjectProps[] = [
   },
   {
     slug: 'cybergram-ios',
-    featured: true,
     title: 'Cybergram',
     description: (
       <span>
@@ -181,51 +180,6 @@ const projects: ProjectProps[] = [
     otherTechStacks: ['Firebase Auth', 'Firestore', 'Firebase Storage', 'Cloud Services'],
     category: 'iOS Development',
     links: getLinks('AndreasMaerki/Cybergram')
-  },
-  {
-    slug: 'swiftui-widget-collection',
-    title: 'SwiftUI Widget Collection',
-    description:
-      'A comprehensive collection of iOS 14+ widgets built with WidgetKit and SwiftUI. Demonstrates modern widget development patterns, data handling, and user customization options.',
-    techStacks: ['SwiftUI', 'WidgetKit', 'Combine'],
-    otherTechStacks: ['Intents', 'Core Data', 'UserDefaults'],
-    category: 'Open Source',
-    links: getLinks('swiftui-widgets')
-  },
-  {
-    slug: 'core-data-manager',
-    title: 'Core Data Manager Framework',
-    description:
-      'A lightweight Core Data wrapper that simplifies database operations in iOS apps. Provides type-safe database operations, automatic migration handling, and query builders.',
-    techStacks: ['Swift', 'Core Data', 'Combine'],
-    otherTechStacks: ['Unit Testing', 'SPM'],
-    category: 'Framework Development',
-    links: getLinks('core-data-manager')
-  },
-  {
-    slug: 'retail-scanner-app',
-    title: 'QR/Barcode Scanner App',
-    description:
-      'Professional scanning application with advanced recognition capabilities. Features real-time scanning, product lookup integration, and inventory management tools.',
-    techStacks: ['Swift', 'UIKit', 'AVFoundation'],
-    otherTechStacks: ['Vision Framework', 'Core Image', 'REST API'],
-    category: 'iOS Development',
-    links: []
-  },
-  {
-    slug: 'music-production-app',
-    title: 'Music Production Companion',
-    description: (
-      <span>
-        iOS app for electronic music producers, integrating with my{' '}
-        <InlineLink href='#'>YouTube channel</InlineLink> content. 
-        Features beat patterns, synthesis tutorials, and production tools for mobile music creation.
-      </span>
-    ),
-    techStacks: ['SwiftUI', 'AVFoundation', 'Core Audio'],
-    otherTechStacks: ['AudioKit', 'MIDI', 'CloudKit'],
-    category: 'Personal Project',
-    links: getLinks('music-production-ios')
   },
   {
     slug: 'network-snmp-tool',
@@ -250,26 +204,6 @@ const projects: ProjectProps[] = [
     otherTechStacks: ['Jenkins', 'Git', 'App Store Connect API'],
     category: 'DevOps',
     links: getLinks('ios-cicd-pipeline')
-  },
-  {
-    slug: 'combine-networking',
-    title: 'Combine Networking Layer',
-    description:
-      'Modern networking layer built with Combine framework. Provides reactive API calls, error handling, and response caching with a clean, testable architecture.',
-    techStacks: ['Swift', 'Combine', 'URLSession'],
-    otherTechStacks: ['Unit Testing', 'Mocking', 'JSON Codable'],
-    category: 'Framework Development',
-    links: getLinks('combine-networking')
-  },
-  {
-    slug: 'swiftui-design-system',
-    title: 'SwiftUI Design System',
-    description:
-      'Comprehensive design system for iOS applications built with SwiftUI. Includes reusable components, typography, color schemes, and accessibility features.',
-    techStacks: ['SwiftUI', 'Swift', 'Accessibility'],
-    otherTechStacks: ['Design Tokens', 'Documentation', 'SPM'],
-    category: 'Design System',
-    links: getLinks('swiftui-design-system')
   }
 ]
 

@@ -19,7 +19,7 @@ export default function FeaturedProjects(): JSX.Element {
     <div 
       key={project.slug}
       className={clsx(
-        'animate-fade-in',
+        'animate-fade-in h-full',
         index === 0 && '!delay-200',
         index === 1 && '!delay-300',
         index === 2 && '!delay-400'

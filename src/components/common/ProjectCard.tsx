@@ -49,7 +49,7 @@ export default function ProjectCard({
 
   return (
     <Card className={clsx(
-      'flex flex-col justify-between',
+      'flex flex-col justify-between h-full',
       'hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300',
       'hover:-translate-y-1 group',
       'border border-transparent hover:border-purple-500/20'
