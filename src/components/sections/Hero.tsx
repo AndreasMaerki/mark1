@@ -14,7 +14,15 @@ const Section = lazy(() => import('@/components/layouts/Section'))
 
 export default function Hero(): JSX.Element {
   const { animationClass } = useFadeInMounted()
-  const scrollToProjects = (): void => window.location.assign('#projects')
+  const scrollToProjects = (): void => {
+    const projectsSection = document.getElementById('projects')
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
 
   return (
     <div className="relative">
