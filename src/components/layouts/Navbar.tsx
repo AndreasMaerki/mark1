@@ -13,8 +13,13 @@ const Title = lazy(() => import('@/components/common/Title'))
 export default function Navbar(): JSX.Element {
   const isMounted = useMounted()
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 640)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
   const [toggle, setToggle] = useState<boolean>(false)
+  
+  // Initialize mobile state safely after mount
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 640)
+  }, [])
 
   const handleWidthChange = (): void => setIsMobile(window.innerWidth < 640)
   useEventListener('resize', handleWidthChange)
@@ -34,15 +39,20 @@ export default function Navbar(): JSX.Element {
     <nav
       className={clsx(
         'fixed top-0 z-50 w-full transition-all duration-300',
+        'backdrop-blur-md bg-light/80 dark:bg-dark/80',
         isScrolled 
-          ? 'backdrop-blur-md bg-light/80 dark:bg-dark/80 shadow-lg shadow-purple-500/5' 
-          : 'backdrop-blur-xl'
+          ? 'shadow-lg shadow-purple-500/10' 
+          : 'shadow-sm shadow-purple-500/5'
       )}
     >
-      <div className='container flex flex-wrap items-center justify-between py-4 xl:max-w-screen-xl'>
+      <div className='container flex flex-wrap items-center justify-between py-4 xl:max-w-screen-xl h-18'>
         <Title size='sm' />
-        <div className='flex items-center space-x-2 sm:space-x-6'>
-          {!isMobile && <NavLinks />}
+        <div className='flex items-center space-x-2 sm:space-x-6 min-w-0'>
+          {!isMobile && (
+            <div className="flex items-center">
+              <NavLinks />
+            </div>
+          )}
           {isMobile && (
             <div className='relative'>
               <IconButton
@@ -53,7 +63,9 @@ export default function Navbar(): JSX.Element {
               {toggle && <Dropdown />}
             </div>
           )}
-          {isMounted && <ThemeSwitcher />}
+          <div className="flex items-center w-10 h-10 justify-center">
+            {isMounted ? <ThemeSwitcher /> : <div className="w-10 h-10" />}
+          </div>
         </div>
       </div>
     </nav>

@@ -6,7 +6,6 @@ import calculateMinRead from '@/utils/calculateMinRead'
 import truncateText from '@/utils/truncateText'
 
 const PageWrapper = lazy(() => import('@/components/layouts/PageWrapper'))
-const Navbar = lazy(() => import('@/components/layouts/Navbar'))
 const Blog = lazy(() => import('@/components/sections/Blog'))
 const Footer = lazy(() => import('@/components/layouts/Footer'))
 
@@ -72,7 +71,6 @@ export default function BlogPage(): JSX.Element {
       </Helmet>
       <Suspense fallback={<Preloader />}>
         <PageWrapper>
-          <Navbar />
           <Blog articles={articles} />
           <Footer />
         </PageWrapper>

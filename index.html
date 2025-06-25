@@ -48,6 +48,24 @@
       href="/manifest.json"
     />
     <title>Andreas Maerki | Senior iOS Developer & Swift Specialist</title>
+    
+    <!-- Dark mode script - runs immediately to prevent flash -->
+    <script>
+      (function() {
+        function checkDarkTheme() {
+          return (
+            localStorage.theme === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          )
+        }
+        
+        if (checkDarkTheme()) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })()
+    </script>
   </head>
   <body class="bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white">
     <div
