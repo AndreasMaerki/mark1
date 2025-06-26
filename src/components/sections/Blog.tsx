@@ -1,6 +1,7 @@
 import { lazy } from 'react'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
+import { getAllBlogPosts } from '@/utils/contentLoader'
 
 const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
 const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
@@ -9,18 +10,9 @@ const Section = lazy(() => import('@/components/layouts/Section'))
 
 export default function Blog(): JSX.Element {
   const { animationClass } = useFadeInMounted()
-
-  const blogPosts = [
-    {
-      title: "ARGeoTracking: Bridging GPS and AR Coordinates",
-      excerpt: "A deep dive into the sophisticated engineering required to accurately translate GPS coordinates into AR world space coordinates, exploring the challenges of sensor fusion and coordinate system transformations.",
-      datePublished: "June 06, 2025",
-      minRead: 8,
-      slug: "argeotracking-analysis",
-      isLocal: true
-    }
-    // Add more blog posts here in the future
-  ]
+  
+  // Get blog posts from content loader
+  const blogPosts = getAllBlogPosts()
 
   return (
     <Section className={clsx(animationClass, 'min-h-[calc(100vh-320px)]')}>
@@ -41,7 +33,7 @@ export default function Blog(): JSX.Element {
       >
         {blogPosts.map((post, index) => (
           <BlogCard
-            key={index}
+            key={post.slug}
             title={post.title}
             excerpt={post.excerpt}
             datePublished={post.datePublished}
