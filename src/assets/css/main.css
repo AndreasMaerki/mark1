@@ -77,9 +77,9 @@
     --gradientPosition: center;
     --background: 215 225 255;
     background: radial-gradient(
-      400px at var(--gradientPosition),
-      rgb(var(--background) / 0.4) 0%,
-      rgb(var(--background) / 0.2) 40%,
+      250px at var(--gradientPosition),
+      rgb(var(--background) / 0.15) 0%,
+      rgb(var(--background) / 0.08) 40%,
       transparent 100%
     );
   }

@@ -4,11 +4,9 @@ import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 import useMounted from '@/hooks/useMounted'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
 const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
 const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
 const Section = lazy(() => import('@/components/layouts/Section'))
-const ArrowLeftSLineIcon = lazy(() => import('remixicon-react/ArrowLeftSLineIcon'))
 const SearchEyeLineIcon = lazy(() => import('remixicon-react/SearchEyeLineIcon'))
 
 export default function NotFound(): JSX.Element {
@@ -84,27 +82,10 @@ export default function NotFound(): JSX.Element {
             But don't worry – let's get you back on track!
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in !delay-500">
-            <NavLink to='/'>
-              <PrimaryButton
-                icon={<ArrowLeftSLineIcon />}
-                className='pl-1 md:mx-auto'
-                inverted
-              >
-                Go Home
-              </PrimaryButton>
-            </NavLink>
-            <button
-              onClick={() => window.history.back()}
-              className="px-6 py-3 border border-primary/30 dark:border-primary-light/30 text-primary dark:text-primary-light rounded-lg hover:bg-primary/5 dark:hover:bg-primary-light/5 transition-colors"
-            >
-              Go Back
-            </button>
-          </div>
+
 
           {/* Popular Pages */}
-          <div className="w-full max-w-2xl animate-fade-in !delay-700">
+          <div className="w-full max-w-2xl animate-fade-in !delay-500">
             <Heading2 className="text-center mb-6 text-primary-dark dark:text-white">
               Popular Pages
             </Heading2>
