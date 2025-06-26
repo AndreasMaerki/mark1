@@ -9,12 +9,15 @@ const IconButton = lazy(() => import('@/components/common/reusable/button/IconBu
 const NavLinks = lazy(() => import('@/components/common/NavLinks'))
 const ThemeSwitcher = lazy(() => import('@/components/common/ThemeSwitcher'))
 const Title = lazy(() => import('@/components/common/Title'))
+const MatrixButton = lazy(() => import('@/components/common/reusable/button/MatrixButton'))
+const MatrixEffect = lazy(() => import('@/components/common/reusable/MatrixEffect'))
 
 export default function Navbar(): JSX.Element {
   const isMounted = useMounted()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [toggle, setToggle] = useState<boolean>(false)
+  const [matrixActive, setMatrixActive] = useState<boolean>(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   
   // Initialize mobile state safely after mount
@@ -63,40 +66,49 @@ export default function Navbar(): JSX.Element {
 
   const onThemeButtonClick = (): void => setToggle(!toggle)
   const closeDropdown = (): void => setToggle(false)
+  const toggleMatrix = (): void => setMatrixActive(!matrixActive)
 
   return (
-    <nav
-      className={clsx(
-        'fixed top-0 z-50 w-full transition-all duration-300',
-        'backdrop-blur-md bg-light/80 dark:bg-dark/80',
-        isScrolled 
-          ? 'shadow-lg shadow-purple-500/10' 
-          : 'shadow-sm shadow-purple-500/5'
-      )}
-    >
-      <div className='container flex flex-wrap items-center justify-between py-4 xl:max-w-screen-xl h-18'>
-        <Title size='sm' />
-        <div className='flex items-center space-x-2 sm:space-x-6 min-w-0'>
-          {!isMobile && (
-            <div className="flex items-center">
-              <NavLinks />
+    <>
+      <nav
+        className={clsx(
+          'fixed top-0 z-50 w-full transition-all duration-300',
+          'backdrop-blur-md bg-light/80 dark:bg-dark/80',
+          isScrolled 
+            ? 'shadow-lg shadow-purple-500/10' 
+            : 'shadow-sm shadow-purple-500/5'
+        )}
+      >
+        <div className='container flex flex-wrap items-center justify-between py-4 xl:max-w-screen-xl h-18'>
+          <Title size='sm' />
+          <div className='flex items-center space-x-2 sm:space-x-6 min-w-0'>
+            {!isMobile && (
+              <div className="flex items-center">
+                <NavLinks />
+              </div>
+            )}
+            {isMobile && (
+              <div className='relative' ref={dropdownRef}>
+                <IconButton
+                  icon={<Menu3FillIcon size={20} />}
+                  screenReaderText='Toggle dropdown'
+                  onClick={onThemeButtonClick}
+                />
+                {toggle && <Dropdown onItemClick={closeDropdown} />}
+              </div>
+            )}
+            <div className="flex items-center space-x-2">
+              <MatrixButton onToggle={toggleMatrix} isActive={matrixActive} />
+              <div className="flex items-center w-10 h-10 justify-center">
+                {isMounted ? <ThemeSwitcher /> : <div className="w-10 h-10" />}
+              </div>
             </div>
-          )}
-          {isMobile && (
-            <div className='relative' ref={dropdownRef}>
-              <IconButton
-                icon={<Menu3FillIcon size={20} />}
-                screenReaderText='Toggle dropdown'
-                onClick={onThemeButtonClick}
-              />
-              {toggle && <Dropdown onItemClick={closeDropdown} />}
-            </div>
-          )}
-          <div className="flex items-center w-10 h-10 justify-center">
-            {isMounted ? <ThemeSwitcher /> : <div className="w-10 h-10" />}
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      
+      {/* Matrix Effect Overlay */}
+      <MatrixEffect isActive={matrixActive} />
+    </>
   )
 }
