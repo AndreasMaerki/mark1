@@ -1,6 +1,5 @@
 import { lazy, useEffect, Suspense } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { getBlogPost, getBlogPostMetadata } from '@/utils/contentLoader'
 
 const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
@@ -42,13 +41,7 @@ export default function BlogPostPage(): JSX.Element {
   }
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      className="min-h-screen bg-white dark:bg-primary-dark"
-    >
+    <div className="min-h-screen bg-white dark:bg-primary-dark">
       {/* Header with back button - positioned below navbar */}
       <div className="bg-white/95 dark:bg-primary-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700/20 mt-20">
         <div className="container mx-auto px-6 py-4">
@@ -104,6 +97,6 @@ export default function BlogPostPage(): JSX.Element {
           </div>
         </article>
       </Suspense>
-    </motion.div>
+    </div>
   )
 }

@@ -1,8 +1,7 @@
-import { lazy, useRef, useEffect } from 'react'
+import { lazy, useRef, useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
-import useMounted from '@/hooks/useMounted'
 
 const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
 const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
@@ -12,7 +11,13 @@ const SearchEyeLineIcon = lazy(() => import('remixicon-react/SearchEyeLineIcon')
 export default function NotFound(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
-  const mounted: boolean = useMounted()
+  const [mounted, setMounted] = useState(false)
+
+  // Mount animation timer
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEventListener('mousemove', (e: Event): void => {
     if (!(e instanceof MouseEvent) || !ref.current) {
@@ -81,8 +86,6 @@ export default function NotFound(): JSX.Element {
             The page you're looking for seems to have wandered off into the digital void. 
             But don't worry – let's get you back on track!
           </p>
-
-
 
           {/* Popular Pages */}
           <div className="w-full max-w-2xl animate-fade-in !delay-500">

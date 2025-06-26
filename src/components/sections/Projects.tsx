@@ -4,11 +4,14 @@ import projects from '@/_data/projects'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import ProjectProps from '@/types/components/ProjectProps'
 
-const Badge = lazy(() => import('@/components/common/reusable/Badge'))
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
+// Keep lazy loading for complex components only
 const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
-const Section = lazy(() => import('@/components/layouts/Section'))
+
+// Direct imports for small, frequently used components
+import Badge from '@/components/common/reusable/Badge'
+import Heading1 from '@/components/common/reusable/heading/Heading1'
+import InlineLink from '@/components/common/reusable/InlineLink'
+import Section from '@/components/layouts/Section'
 
 export default function Projects(): JSX.Element {
   const { animationClass } = useFadeInMounted()

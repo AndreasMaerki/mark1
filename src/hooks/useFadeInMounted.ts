@@ -1,22 +1,21 @@
-import { useState } from 'react'
-import useMounted from '@/hooks/useMounted'
-import useEventListener from '@/hooks/useEventListener'
+import { useState, useEffect } from 'react'
 
 export default function useFadeInMounted(): {
   animationClass: Record<string, boolean>
 } {
-  const mounted: boolean = useMounted()
-  const [hasScrolledToTop, setHasScrolledToTop] = useState<boolean>(false)
+  const [mounted, setMounted] = useState<boolean>(false)
 
-  useEventListener('scroll', (): void => {
-    if (hasScrolledToTop) {
-      return
-    }
-    setHasScrolledToTop(mounted && window.scrollY <= 25)
-  })
+  useEffect(() => {
+    // Simple timeout to trigger fade-in animation
+    const timer = setTimeout(() => {
+      setMounted(true)
+    }, 100)
+    
+    return () => clearTimeout(timer)
+  }, [])
 
   const animationClass = {
-    'animate-start': mounted || hasScrolledToTop
+    'animate-start': mounted
   }
 
   return { animationClass }

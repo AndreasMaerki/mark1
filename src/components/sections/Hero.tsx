@@ -3,15 +3,17 @@ import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import useSmoothScroll from '@/hooks/useSmootScroll'
 
+// Keep lazy loading for large/complex components
 const ArrowDownSLineIcon = lazy(() => import('remixicon-react/ArrowDownSLineIcon'))
-const TextGenerateEffect = lazy(() => import('@/components/common/reusable/TextGenerateEffect'))
-const MagicButton = lazy(() => import('@/components/common/reusable/MagicButton'))
-const SlidingInUnderline = lazy(() => import('@/components/common/reusable/SlidingInUnderline'))
-const HighlightText = lazy(() => import('@/components/common/reusable/HighlightText'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
-const SocialMediaLinks = lazy(() => import('@/components/common/SocialMediaLinks'))
-const ProfileImage = lazy(() => import('@/components/common/ProfileImage'))
-const Section = lazy(() => import('@/components/layouts/Section'))
+
+// Direct imports for small, critical components
+import MagicButton from '@/components/common/reusable/MagicButton'
+import SlidingInUnderline from '@/components/common/reusable/SlidingInUnderline'
+import HighlightText from '@/components/common/reusable/HighlightText'
+import InlineLink from '@/components/common/reusable/InlineLink'
+import SocialMediaLinks from '@/components/common/SocialMediaLinks'
+import ProfileImage from '@/components/common/ProfileImage'
+import Section from '@/components/layouts/Section'
 
 export default function Hero(): JSX.Element {
   const { animationClass } = useFadeInMounted()
@@ -44,10 +46,10 @@ export default function Hero(): JSX.Element {
             </SlidingInUnderline>
           </h2>
           
-          <TextGenerateEffect
-            className="text-center text-3xl sm:text-5xl lg:text-6xl break-words font-extrabold tracking-tight !delay-300"
-            words="10+ years crafting iOS applications and mobile experiences"
-          />
+          <h1 className="animate-fade-in !delay-300 text-center text-3xl sm:text-5xl lg:text-6xl break-words font-extrabold tracking-tight">
+            <span className="dark:text-white text-slate-900">10+ years crafting </span>
+            <span className="text-purple-400">iOS applications and mobile experiences</span>
+          </h1>
           
           <p
             className={clsx(

@@ -1,40 +1,46 @@
 import { lazy, useEffect, useState, useRef } from 'react'
 import clsx from 'clsx'
-import useMounted from '@/hooks/useMounted'
-import useEventListener from '@/hooks/useEventListener'
 import Dropdown from '@/components/common/Dropdown'
 
+// Keep lazy loading for complex components
 const Menu3FillIcon = lazy(() => import('remixicon-react/Menu3FillIcon'))
-const IconButton = lazy(() => import('@/components/common/reusable/button/IconButton'))
-const NavLinks = lazy(() => import('@/components/common/NavLinks'))
-const ThemeSwitcher = lazy(() => import('@/components/common/ThemeSwitcher'))
-const Title = lazy(() => import('@/components/common/Title'))
-const MatrixButton = lazy(() => import('@/components/common/reusable/button/MatrixButton'))
 const MatrixEffect = lazy(() => import('@/components/common/reusable/MatrixEffect'))
 
+// Direct imports for small, critical components
+import IconButton from '@/components/common/reusable/button/IconButton'
+import NavLinks from '@/components/common/NavLinks'
+import ThemeSwitcher from '@/components/common/ThemeSwitcher'
+import Title from '@/components/common/Title'
+import MatrixButton from '@/components/common/reusable/button/MatrixButton'
+
 export default function Navbar(): JSX.Element {
-  const isMounted = useMounted()
+  const [isMounted, setIsMounted] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [toggle, setToggle] = useState<boolean>(false)
   const [matrixActive, setMatrixActive] = useState<boolean>(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   
-  // Initialize mobile state safely after mount
+  // Consolidate all window event listeners and mounting logic
   useEffect(() => {
-    setIsMobile(window.innerWidth < 640)
-  }, [])
-
-  const handleWidthChange = (): void => setIsMobile(window.innerWidth < 640)
-  useEventListener('resize', handleWidthChange)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+    const handleResize = () => setIsMobile(window.innerWidth < 640)
+    const handleScroll = () => setIsScrolled(window.scrollY > 10)
     
+    // Set initial values
+    handleResize()
+    handleScroll()
+    
+    // Mount animation timer
+    const mountTimer = setTimeout(() => setIsMounted(true), 100)
+    
+    window.addEventListener('resize', handleResize)
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    
+    return () => {
+      clearTimeout(mountTimer)
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   // Close dropdown when clicking outside or pressing escape
