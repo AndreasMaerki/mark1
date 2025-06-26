@@ -7,7 +7,6 @@
 @layer base {
   html {
     font-family: 'Nunito Sans', system-ui, sans-serif;
-    scroll-behavior: smooth;
     background: linear-gradient(-135deg, #c4bdff 10%, #c6c9ff 50%, #e2f5ff 100%);
   }
   

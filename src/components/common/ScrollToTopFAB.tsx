@@ -12,7 +12,7 @@ export default function ScrollToTopFAB(): JSX.Element {
   const [isButtonVisible, setButtonVisible] = useState<boolean>(false)
 
   const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo(0, 0)
   }
 
   useEventListener('scroll', (): void => {
