@@ -20,7 +20,7 @@ export default {
         'grid-black': 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'100\' height=\'100\' fill=\'none\' stroke=\'rgb(0 0 0 / 0.2)\'%3E%3Cpath d=\'M0 .5H31.5V32\'/%3E%3C/svg%3E")',
       },
       colors: {
-        'primary-dark': '#110627',
+        'primary-dark': '#0d0420',
         'primary-light': '#E2CBFF',
         'muted': '#BEC1DD',
         'muted-dark': '#8B8BA3',
