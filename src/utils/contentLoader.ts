@@ -5,7 +5,6 @@
 
 // Import markdown content
 import blogPostContent from '@/_data/blog-post-argeotracking.md?raw'
-import aboutContent from '@/_data/about/about.md?raw'
 
 export interface BlogPost {
   slug: string
@@ -60,13 +59,6 @@ export const getAllBlogPosts = (): BlogPost[] => {
       isLocal: true
     }
   ]
-}
-
-/**
- * Get about page content
- */
-export const getAboutContent = (): string => {
-  return aboutContent
 }
 
 /**
