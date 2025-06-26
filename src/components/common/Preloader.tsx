@@ -34,9 +34,14 @@ export default function Preloader(): JSX.Element {
     }`}>
       {/* Simple spinning circle loader */}
       <div 
-        className={`w-12 h-12 border-4 border-gray-300 border-t-purple-500 rounded-full animate-spin transition-all duration-300 ${
-          isDark ? 'border-gray-600 border-t-purple-400' : ''
+        className={`w-12 h-12 border-4 rounded-full transition-all duration-300 ${
+          isDark 
+            ? 'border-gray-600 border-t-purple-400' 
+            : 'border-gray-300 border-t-purple-500'
         } ${isVisible ? 'scale-100' : 'scale-95'}`}
+        style={{
+          animation: 'spin 1s linear infinite',
+        }}
         aria-label="Loading..."
       />
     </div>
