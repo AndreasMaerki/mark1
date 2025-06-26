@@ -98,4 +98,18 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Custom spin animation for preloader */
+  @keyframes preloader-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .preloader-spinner {
+    animation: preloader-spin 1s linear infinite;
+  }
 }

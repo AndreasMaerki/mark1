@@ -49,6 +49,78 @@
     />
     <title>Andreas Maerki | Senior iOS Developer & Swift Specialist</title>
     
+    <!-- Immediate background styling to prevent white flash -->
+    <style>
+      html {
+        background: linear-gradient(-135deg, #c4bdff 10%, #c6c9ff 50%, #e2f5ff 100%);
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      html.dark {
+        background: linear-gradient(-135deg, #2d1020 20%, #1f0f35 50%, #0d0420 100%);
+      }
+      
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(30deg, #c5d1ffe6 33%, #c5d1ff00 66%),
+                    linear-gradient(-135deg, #c4bdff 10%, #c6c9ff 50%, #e2f5ff 100%);
+        background-attachment: fixed;
+        color: #1e293b;
+        transition: background-color 0.3s ease;
+      }
+      
+      html.dark body {
+        background: linear-gradient(30deg, #0d0420e6 10%, #0d042000 66%),
+                    linear-gradient(-135deg, #2d1020 20%, #1f0f35 50%, #001560 100%);
+        background-attachment: fixed;
+        color: #ffffff;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Initial preloader styles */
+      #initial-preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+      
+      #initial-preloader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .initial-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid #d1d5db;
+        border-top: 4px solid #a855f7;
+        border-radius: 50%;
+        animation: initialSpin 1s linear infinite;
+      }
+      
+      html.dark .initial-spinner {
+        border-color: #4b5563;
+        border-top-color: #c084fc;
+      }
+      
+      @keyframes initialSpin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    
     <!-- Dark mode script - runs immediately to prevent flash -->
     <script>
       (function() {
@@ -67,11 +139,33 @@
       })()
     </script>
   </head>
-  <body class="bg-[#c5d1ff] text-slate-800 dark:bg-[#110627] dark:text-white">
-    <div
-      id="root"
-      class="bg-light dark:bg-dark"
-    ></div>
+  <body>
+    <!-- Initial preloader that shows immediately -->
+    <div id="initial-preloader">
+      <div class="initial-spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <!-- Hide initial preloader once React loads -->
+    <script>
+      // Hide the initial preloader once React starts rendering
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          const preloader = document.getElementById('initial-preloader');
+          if (preloader) {
+            preloader.classList.add('hidden');
+            // Remove from DOM after transition
+            setTimeout(function() {
+              if (preloader.parentNode) {
+                preloader.parentNode.removeChild(preloader);
+              }
+            }, 300);
+          }
+        }, 100); // Small delay to ensure React has started
+      });
+    </script>
+    
     <script
       type="module"
       src="/src/main.tsx"
