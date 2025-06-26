@@ -18,3 +18,22 @@ status = 200
 
 [build]
 publish = "build"
+
+# Headers for better Safari performance and animation support
+[[headers]]
+for = "/*"
+[headers.values]
+# Enable high-resolution timers for smoother animations
+Cross-Origin-Opener-Policy = "same-origin"
+Cross-Origin-Embedder-Policy = "require-corp"
+# Cache optimization
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/index.html"
+[headers.values]
+# Don't cache the main HTML file
+Cache-Control = "public, max-age=0, must-revalidate"
+# Enable high-resolution timers
+Cross-Origin-Opener-Policy = "same-origin"
+Cross-Origin-Embedder-Policy = "require-corp"

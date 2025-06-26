@@ -46,9 +46,9 @@ export default function ARGeoTrackingBlogPost(): JSX.Element {
         <PageWrapper>
           <Section className="max-w-4xl mx-auto">
             <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
               className="prose prose-lg dark:prose-invert max-w-none"
             >
               <header className="mb-8">

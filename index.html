@@ -119,11 +119,25 @@
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
+
+      /* Firefox-specific: Disable fade-in animations */
+      html.firefox .animate-fade-in {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+      
+      html.firefox .animate-start .animate-fade-in {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
     </style>
     
-    <!-- Dark mode script - runs immediately to prevent flash -->
+    <!-- Dark mode and Firefox detection script -->
     <script>
       (function() {
+        // Dark mode detection
         function checkDarkTheme() {
           return (
             localStorage.theme === 'dark' ||
@@ -135,6 +149,11 @@
           document.documentElement.classList.add('dark')
         } else {
           document.documentElement.classList.remove('dark')
+        }
+
+        // Firefox detection
+        if (navigator.userAgent.toLowerCase().includes('firefox')) {
+          document.documentElement.classList.add('firefox')
         }
       })()
     </script>

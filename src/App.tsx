@@ -4,7 +4,6 @@ import Router from '@/router'
 import checkDarkTheme from '@/utils/checkDarkTheme'
 import Preloader from '@/components/common/Preloader'
 
-const ScrollToTop = lazy(() => import('@/components/common/ScrollToTop'))
 const ScrollToTopFAB = lazy(() => import('@/components/common/ScrollToTopFAB'))
 const Navbar = lazy(() => import('@/components/layouts/Navbar'))
 const Spotlight = lazy(() => import('@/components/common/reusable/Spotlight'))
@@ -75,7 +74,6 @@ export default function App(): JSX.Element {
         <Router />
       </div>
       
-      <ScrollToTop />
       <ScrollToTopFAB />
     </>
   )

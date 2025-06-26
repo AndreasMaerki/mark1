@@ -91,12 +91,10 @@
   .animate-fade-in {
     transition: all 500ms ease-out;
     opacity: 0;
-    transform: translateY(50%);
   }
 
   .animate-start .animate-fade-in {
     opacity: 1;
-    transform: translateY(0);
   }
 
   /* Custom spin animation for preloader */
