@@ -9,10 +9,13 @@ export default function Spotlight({ className, fill }: SpotlightProps) {
   return (
     <svg
       className={clsx(
-        "animate-spotlight pointer-events-none absolute z-[1] h-[169%] w-[138%] opacity-0",
+        "pointer-events-none absolute z-[1] h-[169%] w-[138%] opacity-100",
         "dark:mix-blend-screen mix-blend-multiply",
         className
       )}
+      style={{
+        transform: 'translate(-50%, -40%) scale(1)'
+      }}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 3787 2842"
       fill="none"
