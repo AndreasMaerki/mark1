@@ -11,7 +11,7 @@
   }
   
   html.dark {
-    background: linear-gradient(-135deg, #2d1020 20%, #1f0f35 50%, #0d0420 100%);
+    background: linear-gradient(-135deg, #1a0b15 20%, #150a25 50%, #080210 100%);
   }
 
   p {
@@ -63,12 +63,12 @@
   }
 
   .bg-dark {
-    background: linear-gradient(-135deg, #2d1020 20%, #1f0f35 50%, #0d0420 100%);
+    background: linear-gradient(-135deg, #1a0b15 20%, #150a25 50%, #080210 100%);
   }
 
   .bg-overlay-dark {
-    background: linear-gradient(30deg, #0d0420e6 10%, #0d042000 66%),
-      linear-gradient(-135deg, #2d1020 20%, #1f0f35 50%, #001560 100%);
+    background: linear-gradient(30deg, #080210e6 10%, #08021000 66%),
+      linear-gradient(-135deg, #1a0b15 20%, #150a25 50%, #080210 100%);
     background-attachment: fixed;
   }
 
