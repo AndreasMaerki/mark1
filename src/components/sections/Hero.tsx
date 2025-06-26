@@ -69,7 +69,6 @@ export default function Hero(): JSX.Element {
             icon={<ArrowDownSLineIcon />}
             position="right"
             handleClick={scrollToProjects}
-            className="animate-floating"
           />
         </div>
     </Section>
