@@ -1,4 +1,4 @@
-# Hey👋, it's Andreas Maerki, Senior iOS Developer
+# Hey👋, it's Andreas 😎
 
 As a passionate iOS developer with 10 years of experience, I bring extensive expertise in implementing high-quality mobile applications, particularly in retail. I've developed and enhanced apps for B2B and B2C clients, including major retail platforms like kkiosk and avec 24/7. My knowledge spans Swift, SwiftUI, and the latest iOS technologies. I excel in collaborating with agile teams and executing projects from conception to App Store publication, consistently delivering innovative solutions in the e-commerce space.
 
