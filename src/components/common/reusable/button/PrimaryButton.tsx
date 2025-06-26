@@ -16,22 +16,22 @@ export default function PrimaryButton({
     <button
       className={clsx(
         className,
-        'group/underline flex w-fit items-center transition duration-300 ease-in-out',
-        'hover:scale-105 active:scale-95',
+        'group/underline flex items-center transition duration-300 ease-in-out relative px-3 py-2',
         {
-          'font-extrabold text-primary-dark dark:text-white': active,
-          'font-semibold': !active
+          // Active state - bold text
+          'font-bold text-primary-dark dark:text-white': active,
+          // Inactive state - regular weight
+          'font-medium text-slate-600 dark:text-slate-300 hover:text-primary-dark dark:hover:text-primary-light': !active
         },
         {
           'rounded-xl px-3 py-1': inverted,
           'text-primary-dark dark:text-primary-light': inverted,
-          'hover:bg-primary-dark/5 dark:hover:bg-primary-light/5 hover:shadow-lg hover:shadow-purple-500/10': inverted && !active,
-          'hover:text-primary-dark dark:hover:text-primary-light': !inverted && !active
+          'hover:bg-primary-dark/5 dark:hover:bg-primary-light/5 hover:shadow-lg hover:shadow-purple-500/10': inverted && !active
         }
       )}
       onClick={onClick}
     >
-      {icon && <div className='pe-1 group-hover:translate-x-1 transition-transform duration-200'>{icon}</div>}
+      {icon && <div className='pe-1'>{icon}</div>}
       {!active && <SlidingInUnderline type='secondary'>{children}</SlidingInUnderline>}
       {active && children}
     </button>

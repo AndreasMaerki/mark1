@@ -163,7 +163,7 @@ const projects: ProjectProps[] = [
     techStacks: ['SwiftUI', 'SwiftData', 'Swift'],
     otherTechStacks: ['MVVM Architecture', 'Calendar Kit'],
     category: 'macOS Development',
-    links: getLinks('AndreasMaerki/WorkPulse')
+    links: getLinks('WorkPulse')
   },
   {
     slug: 'cybergram-ios',
@@ -179,7 +179,7 @@ const projects: ProjectProps[] = [
     techStacks: ['SwiftUI', 'Firebase', 'Swift'],
     otherTechStacks: ['Firebase Auth', 'Firestore', 'Firebase Storage', 'Cloud Services'],
     category: 'iOS Development',
-    links: getLinks('AndreasMaerki/Cybergram')
+    links: getLinks('Cybergram')
   },
   {
     slug: 'network-snmp-tool',
@@ -203,7 +203,7 @@ const projects: ProjectProps[] = [
     techStacks: ['Fastlane'],
     otherTechStacks: [],
     category: 'DevOps',
-    links: getLinks('ios-cicd-pipeline')
+    links: []
   }
 ]
 

@@ -7,14 +7,16 @@ export default function Badge({ className, children, active, onClick }: BadgePro
     <div
       className={clsx(
         className,
-        'list-none rounded-lg px-2 py-1 my-auto text-sm cursor-pointer font-semibold',
+        'list-none rounded-lg px-2 py-1 my-auto text-sm font-semibold',
         'shadow-md',
         {
           'bg-primary-dark/10 text-primary-dark/95 dark:bg-primary-light/10 dark:text-primary-light/95': !active,
           'bg-gradient-to-r from-purple-600 to-blue-600 text-white': active
         },
-        'hover:bg-primary-dark/[0.175] hover:dark:bg-primary-light/[0.175]',
-        active && 'hover:shadow-lg'
+        // Only add cursor and hover effects if onClick is provided (clickable)
+        onClick && 'cursor-pointer',
+        onClick && 'hover:bg-primary-dark/[0.175] hover:dark:bg-primary-light/[0.175]',
+        onClick && active && 'hover:shadow-lg'
       )}
       onClick={onClick}
     >

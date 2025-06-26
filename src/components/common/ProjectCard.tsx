@@ -19,8 +19,7 @@ export default function ProjectCard({
         key={index}
         className={clsx(
           'mr-2 last-of-type:mr-0',
-          'text-base font-medium text-primary-dark dark:text-primary-light',
-          'hover:scale-105 transition-transform duration-200'
+          'text-base font-medium text-primary-dark dark:text-primary-light'
         )}
       >
         {techStack}
@@ -51,7 +50,7 @@ export default function ProjectCard({
     <Card className={clsx(
       'flex flex-col justify-between h-full',
       'hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300',
-      'hover:-translate-y-1 group',
+      'group',
       'border border-transparent hover:border-purple-500/20'
     )}>
       <header>
