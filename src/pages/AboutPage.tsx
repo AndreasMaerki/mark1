@@ -1,31 +1,24 @@
 import { lazy, Suspense } from 'react'
-import { Helmet } from 'react-helmet'
-import Preloader from '@/components/common/Preloader'
+import useDocumentTitle from '@/hooks/useDocumentTitle'
 
 const PageWrapper = lazy(() => import('@/components/layouts/PageWrapper'))
 const About = lazy(() => import('@/components/sections/About'))
 const Footer = lazy(() => import('@/components/layouts/Footer'))
 
 export default function AboutPage(): JSX.Element {
+  useDocumentTitle({
+    title: 'About - Andreas Maerki | iOS Developer Journey & Expertise',
+    description: 'Learn about Andreas Maerki\'s 10+ year journey in iOS development, specializing in Swift, SwiftUI, and creating exceptional mobile experiences.',
+    keywords: 'iOS Developer, Swift Developer, SwiftUI, Mobile Development, iOS Apps, About Andreas Maerki',
+    canonical: 'https://andreasmaerki.dev/about'
+  })
+
   return (
-    <>
-      <Helmet>
-        <title>About | Andreas Maerki</title>
-        <meta
-          name='description'
-          content='Learn the journey of Andreas Maerki, a Senior iOS Developer with 10+ years of experience developing mobile applications using Swift, SwiftUI, and UIKit for retail and e-commerce platforms.'
-        />
-        <link
-          rel='canonical'
-          href='https://andreasmaerki.dev/about'
-        />
-      </Helmet>
-      <Suspense fallback={<Preloader />}>
-        <PageWrapper>
-          <About />
-          <Footer />
-        </PageWrapper>
-      </Suspense>
-    </>
+    <Suspense>
+      <PageWrapper>
+        <About />
+        <Footer />
+      </PageWrapper>
+    </Suspense>
   )
 }

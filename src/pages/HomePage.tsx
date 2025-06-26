@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { Helmet } from 'react-helmet'
-import Preloader from '@/components/common/Preloader'
+import useDocumentTitle from '@/hooks/useDocumentTitle'
 
 const PageWrapper = lazy(() => import('@/components/layouts/PageWrapper'))
 const Hero = lazy(() => import('@/components/sections/Hero'))
@@ -8,26 +7,23 @@ const FeaturedProjects = lazy(() => import('@/components/sections/FeaturedProjec
 const Footer = lazy(() => import('@/components/layouts/Footer'))
 
 export default function HomePage(): JSX.Element {
+  useDocumentTitle({
+    title: 'Andreas Maerki - Senior iOS Developer | Swift & SwiftUI Expert',
+    description: 'Experienced iOS developer specializing in Swift, SwiftUI, and mobile app development. 10+ years of crafting exceptional iOS applications.',
+    keywords: 'iOS Developer, Swift, SwiftUI, Mobile App Development, iOS Apps, iPhone Developer',
+    canonical: 'https://andreasmaerki.dev/',
+    ogTitle: 'Andreas Maerki - Senior iOS Developer',
+    ogDescription: 'Experienced iOS developer specializing in Swift, SwiftUI, and mobile app development.',
+    ogType: 'website'
+  })
+
   return (
-    <>
-      <Helmet>
-        <title>Andreas Maerki | Senior iOS Developer & Swift Specialist</title>
-        <meta
-          name='description'
-          content='Andreas Maerki is a Senior iOS Developer with 10+ years of experience specializing in Swift, SwiftUI, and mobile app development for retail and e-commerce platforms.'
-        />
-        <link
-          rel='canonical'
-          href='https://andreasmaerki.dev'
-        />
-      </Helmet>
-      <Suspense fallback={<Preloader />}>
-        <PageWrapper>
-          <Hero />
-          <FeaturedProjects />
-          <Footer />
-        </PageWrapper>
-      </Suspense>
-    </>
+    <Suspense>
+      <PageWrapper>
+        <Hero />
+        <FeaturedProjects />
+        <Footer />
+      </PageWrapper>
+    </Suspense>
   )
 }
