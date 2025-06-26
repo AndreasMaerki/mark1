@@ -1,8 +1,8 @@
-import { BallTriangle } from 'react-loader-spinner'
 import { useEffect, useState } from 'react'
 
 export default function Preloader(): JSX.Element {
   const [isDark, setIsDark] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     // Check if dark mode is active
@@ -18,20 +18,26 @@ export default function Preloader(): JSX.Element {
       attributes: true,
       attributeFilter: ['class']
     })
+
+    // Fade in after component mounts
+    const timer = setTimeout(() => setIsVisible(true), 50)
     
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      clearTimeout(timer)
+    }
   }, [])
 
   return (
-    <div className='flex h-screen items-center justify-center bg-white dark:bg-primary-dark'>
-      <BallTriangle
-        height={80}
-        width={80}
-        radius={5}
-        color={isDark ? "#c084fc" : "#a855f7"}
-        ariaLabel="ball-triangle-loading"
-        wrapperClass="preloader"
-        visible={true}
+    <div className={`flex h-screen items-center justify-center transition-opacity duration-300 ${
+      isVisible ? 'opacity-100' : 'opacity-0'
+    }`}>
+      {/* Simple spinning circle loader */}
+      <div 
+        className={`w-12 h-12 border-4 border-gray-300 border-t-purple-500 rounded-full animate-spin transition-all duration-300 ${
+          isDark ? 'border-gray-600 border-t-purple-400' : ''
+        } ${isVisible ? 'scale-100' : 'scale-95'}`}
+        aria-label="Loading..."
       />
     </div>
   )
