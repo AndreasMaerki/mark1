@@ -1,4 +1,4 @@
-import { lazy, useEffect, useState } from 'react'
+import { lazy, useEffect, useState, useRef } from 'react'
 import clsx from 'clsx'
 import useMounted from '@/hooks/useMounted'
 import useEventListener from '@/hooks/useEventListener'
@@ -15,6 +15,7 @@ export default function Navbar(): JSX.Element {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [toggle, setToggle] = useState<boolean>(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
   
   // Initialize mobile state safely after mount
   useEffect(() => {
@@ -33,7 +34,35 @@ export default function Navbar(): JSX.Element {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close dropdown when clicking outside or pressing escape
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setToggle(false)
+      }
+    }
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setToggle(false)
+      }
+    }
+
+    if (toggle) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+      document.addEventListener('keydown', handleEscapeKey)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+      document.removeEventListener('keydown', handleEscapeKey)
+    }
+  }, [toggle])
+
   const onThemeButtonClick = (): void => setToggle(!toggle)
+  const closeDropdown = (): void => setToggle(false)
 
   return (
     <nav
@@ -54,13 +83,13 @@ export default function Navbar(): JSX.Element {
             </div>
           )}
           {isMobile && (
-            <div className='relative'>
+            <div className='relative' ref={dropdownRef}>
               <IconButton
                 icon={<Menu3FillIcon size={20} />}
                 screenReaderText='Toggle dropdown'
                 onClick={onThemeButtonClick}
               />
-              {toggle && <Dropdown />}
+              {toggle && <Dropdown onItemClick={closeDropdown} />}
             </div>
           )}
           <div className="flex items-center w-10 h-10 justify-center">

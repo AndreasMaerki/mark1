@@ -1,9 +1,13 @@
 import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
-import navItems from '@/_data/navItems.ts'
+import navItems from '@/_data/navItems'
 import NavItemsProps from '@/types/NavItemsProps'
 
-export default function Dropdown(): JSX.Element {
+interface DropdownProps {
+  onItemClick?: () => void
+}
+
+export default function Dropdown({ onItemClick }: DropdownProps): JSX.Element {
   const links = navItems.map((item: NavItemsProps, index: number): JSX.Element => (
     <NavLink
       key={index}
@@ -14,6 +18,7 @@ export default function Dropdown(): JSX.Element {
         })
       }
       to={item.href}
+      onClick={onItemClick}
     >
       <li
         className={clsx(
