@@ -1,4 +1,5 @@
 import { lazy, useEffect, Suspense } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Router from '@/router'
 import checkDarkTheme from '@/utils/checkDarkTheme'
 import Preloader from '@/components/common/Preloader'
@@ -9,6 +10,9 @@ const Navbar = lazy(() => import('@/components/layouts/Navbar'))
 const Spotlight = lazy(() => import('@/components/common/reusable/Spotlight'))
 
 export default function App(): JSX.Element {
+  const navigate = useNavigate()
+  const location = useLocation()
+  
   useEffect((): void => {
     // Ensure dark mode is consistent (fallback for edge cases)
     // Main dark mode handling is now in index.html for instant application
@@ -17,7 +21,26 @@ export default function App(): JSX.Element {
     } else {
       document.documentElement.classList.remove('dark')
     }
-  }, [])
+    
+    // Handle SPA redirects from 404.html
+    const storedRedirect = sessionStorage.getItem('spa-redirect')
+    if (storedRedirect && location.pathname === '/') {
+      sessionStorage.removeItem('spa-redirect')
+      // Navigate to the intended path
+      navigate(storedRedirect, { replace: true })
+    }
+    
+    // Also handle URL redirect parameters (fallback)
+    const urlParams = new URLSearchParams(location.search)
+    const redirectParam = urlParams.get('redirect')
+    if (redirectParam) {
+      // Clean URL and navigate to intended path
+      const cleanUrl = new URL(window.location.href)
+      cleanUrl.searchParams.delete('redirect')
+      window.history.replaceState({}, '', cleanUrl.href)
+      navigate(redirectParam, { replace: true })
+    }
+  }, [navigate, location])
 
   return (
     <>

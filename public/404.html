@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // Immediately redirect to the main app with the current path
-        // This handles SPA routing for direct URL access
+        // Store the intended path and redirect to root
+        // The React app will handle the routing
         const currentPath = window.location.pathname + window.location.search + window.location.hash;
-        window.location.replace('/' + '?redirect=' + encodeURIComponent(currentPath));
+        
+        // Store in sessionStorage for the React app to pick up
+        sessionStorage.setItem('spa-redirect', currentPath);
+        
+        // Redirect to root immediately
+        window.location.replace('/');
     </script>
 </head>
 <body>
