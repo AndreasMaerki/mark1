@@ -1,7 +1,5 @@
 # Building ARGeoTracking: Bridging Real World Coordinates with Augmented Reality
 
-*December 2024*
-
 Recently, I had the opportunity to analyze a fascinating iOS project that demonstrates the intricate challenge of combining augmented reality with real-world geographical coordinates. The ARGeoTracking app represents a sophisticated solution to one of AR development's most complex problems: accurately placing virtual objects in AR space based on their real-world GPS coordinates.
 
 ## The Core Challenge

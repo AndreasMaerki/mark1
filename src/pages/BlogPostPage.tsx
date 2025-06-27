@@ -89,11 +89,13 @@ export default function BlogPostPage(): JSX.Element {
               {blogPost.content}
             </ReactMarkdown>
             
-            <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
-              <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
-                This analysis is based on examining the ARGeoTracking project codebase, which demonstrates advanced techniques in CoreLocation, ARKit, and RealityKit integration.
-              </p>
-            </footer>
+            {slug === 'argeotracking-analysis' && (
+              <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
+                <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
+                  This analysis is based on examining the ARGeoTracking project codebase, which demonstrates advanced techniques in CoreLocation, ARKit, and RealityKit integration.
+                </p>
+              </footer>
+            )}
           </div>
         </article>
       </Suspense>

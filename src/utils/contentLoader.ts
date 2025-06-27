@@ -5,6 +5,7 @@
 
 // Import markdown content
 import blogPostContent from '@/_data/blog-post-argeotracking.md?raw'
+import liquidGlassContent from '@/_data/blog-post-apple-liquid-glass.md?raw'
 
 export interface BlogPost {
   slug: string
@@ -34,9 +35,19 @@ export const getBlogPost = (slug: string): BlogPost | null => {
         slug: 'argeotracking-analysis',
         title: 'Building ARGeoTracking: Bridging Real World Coordinates with Augmented Reality',
         excerpt: 'A deep dive into the sophisticated engineering required to accurately translate GPS coordinates into AR world space coordinates, exploring the challenges of sensor fusion and coordinate system transformations.',
-        datePublished: 'December 2024',
+        datePublished: 'June 04, 2025',
         minRead: 8,
         content: blogPostContent,
+        isLocal: true
+      }
+    case 'apple-liquid-glass':
+      return {
+        slug: 'apple-liquid-glass',
+        title: 'Apple\'s Liquid Glass: Just a Redesign or Strategic a Vision?',
+        excerpt: 'Apple\'s controversial Liquid Glass interface has sparked criticism, but could it be another case of initial resistance to groundbreaking design? An analysis of Apple\'s strategic vision for spatial computing and the future of human-machine interaction.',
+        datePublished: 'June 24, 2025',
+        minRead: 6,
+        content: liquidGlassContent,
         isLocal: true
       }
     default:
@@ -50,10 +61,19 @@ export const getBlogPost = (slug: string): BlogPost | null => {
 export const getAllBlogPosts = (): BlogPost[] => {
   return [
     {
+      slug: 'apple-liquid-glass',
+      title: 'Apple\'s Liquid Glass: Just a Redesign or a Strategic Vision?',
+      excerpt: 'Apple\'s controversial Liquid Glass interface has sparked criticism, but could it be another case of initial resistance to groundbreaking design? An analysis of Apple\'s strategic vision for spatial computing.',
+      datePublished: 'June 24, 2025',
+      minRead: 6,
+      content: liquidGlassContent,
+      isLocal: true
+    },
+    {
       slug: 'argeotracking-analysis',
       title: 'ARGeoTracking: Bridging GPS and AR Coordinates',
       excerpt: 'A deep dive into the sophisticated engineering required to accurately translate GPS coordinates into AR world space coordinates, exploring the challenges of sensor fusion and coordinate system transformations.',
-      datePublished: 'June 06, 2025',
+      datePublished: 'June 04, 2025',
       minRead: 8,
       content: blogPostContent,
       isLocal: true
@@ -71,8 +91,16 @@ export const getBlogPostMetadata = (slug: string): ContentMetadata | null => {
         title: 'Building ARGeoTracking: AR Coordinate Transformation | Andreas Maerki',
         description: 'Deep dive into the technical challenges of combining augmented reality with real-world GPS coordinates. Analysis of compass stabilization, coordinate transformations, and AR development.',
         author: 'Andreas Maerki',
-        publishedTime: '2024-12-18',
+        publishedTime: '2025-06-04',
         keywords: ['iOS development', 'ARKit', 'RealityKit', 'GPS', 'augmented reality', 'coordinate transformation', 'Swift', 'CoreLocation', 'compass stabilization']
+      }
+    case 'apple-liquid-glass':
+      return {
+        title: 'Apple\'s Liquid Glass: A Strategic Vision for the Future | Andreas Maerki',
+        description: 'Analysis of Apple\'s controversial Liquid Glass interface and its strategic role in preparing for spatial computing, AR, and the future of human-machine interaction.',
+        author: 'Andreas Maerki',
+        publishedTime: '2025-06-24',
+        keywords: ['Apple', 'Liquid Glass', 'UI design', 'spatial computing', 'Vision Pro', 'user interface', 'design strategy', 'cognitive science', 'accessibility', 'innovation']
       }
     default:
       return null
