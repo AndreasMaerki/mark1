@@ -7,14 +7,14 @@ const navItems: NavItemsProps[] = [
     isNew: false
   },
   {
-    name: 'Blog',
-    href: '/blog',
-    isNew: true
-  },
-  {
     name: 'Projects',
     href: '/projects',
     isNew: false
+  },
+  {
+    name: 'Blog',
+    href: '/blog',
+    isNew: true
   },
   {
     name: 'About',
