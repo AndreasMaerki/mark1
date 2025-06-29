@@ -6,6 +6,7 @@
 // Import markdown content
 import blogPostContent from '@/_data/blog-post-argeotracking.md?raw'
 import liquidGlassContent from '@/_data/blog-post-apple-liquid-glass.md?raw'
+import mvMvvmContent from '@/_data/blog-post-mv-mvvm-debate.md?raw'
 
 export interface BlogPost {
   slug: string
@@ -30,6 +31,16 @@ export interface ContentMetadata {
  */
 export const getBlogPost = (slug: string): BlogPost | null => {
   switch (slug) {
+    case 'mv-mvvm-debate':
+      return {
+        slug: 'mv-mvvm-debate',
+        title: 'MV vs. MVVM: The iOS Development Debate',
+        excerpt: 'In the dynamic world of iOS development, a contentious debate has emerged between MV and MVVM architectures. Exploring the pros and cons of each pattern and why the best choice depends on your app\'s complexity and scale.',
+        datePublished: 'June 29, 2025',
+        minRead: 7,
+        content: mvMvvmContent,
+        isLocal: true
+      }
     case 'argeotracking-analysis':
       return {
         slug: 'argeotracking-analysis',
@@ -61,6 +72,15 @@ export const getBlogPost = (slug: string): BlogPost | null => {
 export const getAllBlogPosts = (): BlogPost[] => {
   return [
     {
+      slug: 'mv-mvvm-debate',
+      title: 'MV vs. MVVM: The iOS Development Debate',
+      excerpt: 'In the dynamic world of iOS development, a contentious debate has emerged between MV and MVVM architectures. Exploring the pros and cons of each pattern and why the best choice depends on your app\'s complexity and scale.',
+      datePublished: 'June 29, 2025',
+      minRead: 7,
+      content: mvMvvmContent,
+      isLocal: true
+    },
+    {
       slug: 'apple-liquid-glass',
       title: 'Apple\'s Liquid Glass: Just a Redesign or a Strategic Vision?',
       excerpt: 'Apple\'s controversial Liquid Glass interface has sparked criticism, but could it be another case of initial resistance to groundbreaking design? An analysis of Apple\'s strategic vision for spatial computing.',
@@ -86,6 +106,14 @@ export const getAllBlogPosts = (): BlogPost[] => {
  */
 export const getBlogPostMetadata = (slug: string): ContentMetadata | null => {
   switch (slug) {
+    case 'mv-mvvm-debate':
+      return {
+        title: 'MV vs. MVVM: The iOS Development Debate | Andreas Maerki',
+        description: 'Exploring the contentious debate between MV and MVVM architectures in iOS development. Analysis of when to use each pattern, their pros and cons, and why architecture choice depends on app complexity.',
+        author: 'Andreas Maerki',
+        publishedTime: '2025-06-29',
+        keywords: ['iOS development', 'MVVM', 'MV', 'SwiftUI', 'architecture patterns', 'software design', 'mobile development', 'clean architecture', 'separation of concerns', 'testability']
+      }
     case 'argeotracking-analysis':
       return {
         title: 'Building ARGeoTracking: AR Coordinate Transformation | Andreas Maerki',
