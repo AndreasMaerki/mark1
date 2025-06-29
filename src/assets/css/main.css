@@ -109,4 +109,16 @@
   .preloader-spinner {
     animation: preloader-spin 1s linear infinite;
   }
+
+  /* Safe area support for iOS devices */
+  .pb-safe-area-inset-bottom {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Mobile bottom navigation spacing */
+@media (max-width: 639px) {
+  .mobile-bottom-nav-spacing {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 12px));
+  }
 }

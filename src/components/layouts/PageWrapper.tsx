@@ -9,7 +9,7 @@ export default function PageWrapper({ className, children }: ComponentProps): JS
   }, [])
 
   return (
-    <div className={clsx(className, 'pt-18 min-h-screen relative')}>
+    <div className={clsx(className, 'pt-18 min-h-screen relative mobile-bottom-nav-spacing')}>
       {/* Content with relative positioning for z-index stacking */}
       <div className="relative z-10">
         {children}

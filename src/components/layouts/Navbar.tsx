@@ -1,13 +1,10 @@
-import { lazy, useEffect, useState, useRef } from 'react'
+import { lazy, useEffect, useState } from 'react'
 import clsx from 'clsx'
-import Dropdown from '@/components/common/Dropdown'
 
 // Keep lazy loading for complex components
-const Menu3FillIcon = lazy(() => import('remixicon-react/Menu3FillIcon'))
 const MatrixEffect = lazy(() => import('@/components/common/reusable/MatrixEffect'))
 
 // Direct imports for small, critical components
-import IconButton from '@/components/common/reusable/button/IconButton'
 import NavLinks from '@/components/common/NavLinks'
 import ThemeSwitcher from '@/components/common/ThemeSwitcher'
 import Title from '@/components/common/Title'
@@ -17,9 +14,7 @@ export default function Navbar(): JSX.Element {
   const [isMounted, setIsMounted] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState<boolean>(false)
-  const [toggle, setToggle] = useState<boolean>(false)
   const [matrixActive, setMatrixActive] = useState<boolean>(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
   
   // Consolidate all window event listeners and mounting logic
   useEffect(() => {
@@ -43,39 +38,11 @@ export default function Navbar(): JSX.Element {
     }
   }, [])
 
-  // Close dropdown when clicking outside or pressing escape
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setToggle(false)
-      }
-    }
-
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setToggle(false)
-      }
-    }
-
-    if (toggle) {
-      document.addEventListener('mousedown', handleClickOutside)
-      document.addEventListener('touchstart', handleClickOutside)
-      document.addEventListener('keydown', handleEscapeKey)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-      document.removeEventListener('touchstart', handleClickOutside)
-      document.removeEventListener('keydown', handleEscapeKey)
-    }
-  }, [toggle])
-
-  const onThemeButtonClick = (): void => setToggle(!toggle)
-  const closeDropdown = (): void => setToggle(false)
   const toggleMatrix = (): void => setMatrixActive(!matrixActive)
 
   return (
     <>
+      {/* Top Navigation - Desktop and Mobile Secondary Items */}
       <nav
         className={clsx(
           'fixed top-0 z-50 w-full transition-all duration-300',
@@ -93,16 +60,7 @@ export default function Navbar(): JSX.Element {
                 <NavLinks />
               </div>
             )}
-            {isMobile && (
-              <div className='relative' ref={dropdownRef}>
-                <IconButton
-                  icon={<Menu3FillIcon size={20} />}
-                  screenReaderText='Toggle dropdown'
-                  onClick={onThemeButtonClick}
-                />
-                {toggle && <Dropdown onItemClick={closeDropdown} />}
-              </div>
-            )}
+
             <div className="flex items-center space-x-2">
               <MatrixButton onToggle={toggleMatrix} isActive={matrixActive} />
               <div className="flex items-center w-10 h-10 justify-center">
@@ -112,6 +70,24 @@ export default function Navbar(): JSX.Element {
           </div>
         </div>
       </nav>
+
+      {/* Bottom Navigation - Mobile Primary Items */}
+      {isMobile && (
+        <nav
+          className={clsx(
+            'fixed bottom-0 left-0 right-0 z-50',
+            'backdrop-blur-md bg-light/95 dark:bg-dark/95',
+            'border-t border-gray-200/30 dark:border-gray-700/30',
+            'shadow-lg shadow-purple-500/10',
+            // Safe area padding for iOS devices
+            'pb-safe-area-inset-bottom'
+          )}
+        >
+          <div className="container mx-auto px-4 py-3">
+            <NavLinks isMobile={true} />
+          </div>
+        </nav>
+      )}
       
       {/* Matrix Effect Overlay */}
       <MatrixEffect isActive={matrixActive} />
