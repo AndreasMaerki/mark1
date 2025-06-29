@@ -1,4 +1,4 @@
-import { lazy, useState } from 'react'
+import { lazy, useState, useEffect } from 'react'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
 
@@ -10,6 +10,15 @@ const SCROLL_OFFSET = 120
 
 export default function ScrollToTopFAB(): JSX.Element {
   const [isButtonVisible, setButtonVisible] = useState<boolean>(false)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+
+  // Check if we're on mobile to adjust positioning
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const scrollToTop = (): void => {
     window.scrollTo(0, 0)
@@ -24,7 +33,13 @@ export default function ScrollToTopFAB(): JSX.Element {
   })
 
   return (
-    <div className='fixed bottom-0 right-0 mb-8 mr-8 z-50'>
+    <div className={clsx(
+      'fixed right-0 z-40 transition-all duration-300 ease-in-out',
+      // Adjust positioning based on mobile/desktop and bottom navigation
+      isMobile 
+        ? 'bottom-20 mr-4 mb-safe-area-inset-bottom' // Above bottom navigation on mobile
+        : 'bottom-0 mr-8 mb-8' // Standard desktop positioning
+    )}>
       <IconButton
         className={clsx('duration-300 transition-opacity', {
           'opacity-100': isButtonVisible,
