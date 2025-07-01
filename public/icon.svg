@@ -1,15 +1,8 @@
 <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="260" height="260" rx="50" fill="url(#paint0_linear_375_354)"/>
-<rect width="260" height="260" rx="50" fill="url(#paint1_linear_375_354)"/>
-<path d="M82 206.389C79.2386 206.389 77 204.151 77 201.389V59C77 56.2386 79.2386 54 82 54H100.841C103.603 54 105.841 56.2386 105.841 59V177.828C105.841 180.59 108.08 182.828 110.841 182.828H177C179.761 182.828 182 185.067 182 187.828V201.389C182 204.151 179.761 206.389 177 206.389H82Z" fill="#EFF6FF"/>
-<defs>
-<linearGradient id="paint0_linear_375_354" x1="260" y1="0" x2="0" y2="260" gradientUnits="userSpaceOnUse">
-<stop offset="0.0983725" stop-color="#491616"/>
-<stop offset="1" stop-color="#00137A"/>
-</linearGradient>
-<linearGradient id="paint1_linear_375_354" x1="260" y1="260" x2="130" y2="130" gradientUnits="userSpaceOnUse">
-<stop stop-color="#110627"/>
-<stop offset="0.624419" stop-color="#110627" stop-opacity="0"/>
-</linearGradient>
-</defs>
+<rect width="260" height="260" rx="50" fill="#2d1b69"/>
+<!-- Letter M -->
+<path d="M50 65C50 62.2386 52.2386 60 55 60H65C66.851 60 68.586 60.965 69.555 62.5L92.5 125L115.445 62.5C116.414 60.965 118.149 60 120 60H130C132.761 60 135 62.2386 135 65V195C135 197.761 132.761 200 130 200H120C117.239 200 115 197.761 115 195V105L95 175C93.895 177.105 91.105 177.105 90 175L70 105V195C70 197.761 67.7614 200 65 200H55C52.2386 200 50 197.761 50 195V65Z" fill="#EFF6FF"/>
+<!-- Number 1 -->
+<path d="M200 195C200 197.761 197.761 200 195 200H185C182.239 200 180 197.761 180 195V75H175C172.239 75 170 72.7614 170 70V65C170 62.2386 172.239 60 175 60H195C197.761 60 200 62.2386 200 65V195Z" fill="#EFF6FF"/>
+
 </svg>

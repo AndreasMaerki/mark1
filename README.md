@@ -1,10 +1,6 @@
-# [andreasmaerki.dev](https://andreasmaerki.dev/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/12345678-1234-1234-1234-123456789012/deploy-status)](https://app.netlify.com/sites/mark1/deploys)
+# [andreasmaerki.dev](https://mark1.ch/)
 
 **andreasmaerki.dev** (codenamed **MARK1**) is my personal portfolio website showcasing my iOS development expertise and projects. This website is built with [Tailwind CSS](https://tailwindcss.com/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/).
-
-[Visit the website here](https://andreasmaerki.dev/)
 
 ## ✨ Features
 
