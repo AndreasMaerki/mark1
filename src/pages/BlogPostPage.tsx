@@ -96,6 +96,15 @@ export default function BlogPostPage(): JSX.Element {
                 </p>
               </footer>
             )}
+            
+            {slug === 'swift-android-workgroup' && (
+              <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
+                <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
+                  This analysis is based on the official Swift Android Workgroup announcement and community discussions from the Swift Forums. 
+                  Information sourced from <a href="https://www.swift.org/android-workgroup/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">swift.org/android-workgroup</a> and <a href="https://forums.swift.org/t/announcing-the-android-workgroup/80666" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Swift Forums discussions</a>.
+                </p>
+              </footer>
+            )}
           </div>
         </article>
       </Suspense>

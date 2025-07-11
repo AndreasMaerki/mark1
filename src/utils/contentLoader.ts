@@ -7,6 +7,7 @@
 import blogPostContent from '@/_data/blog-post-argeotracking.md?raw'
 import liquidGlassContent from '@/_data/blog-post-apple-liquid-glass.md?raw'
 import mvMvvmContent from '@/_data/blog-post-mv-mvvm-debate.md?raw'
+import swiftAndroidContent from '@/_data/blog-post-swift-android-workgroup.md?raw'
 
 export interface BlogPost {
   slug: string
@@ -61,6 +62,16 @@ export const getBlogPost = (slug: string): BlogPost | null => {
         content: liquidGlassContent,
         isLocal: true
       }
+    case 'swift-android-workgroup':
+      return {
+        slug: 'swift-android-workgroup',
+        title: 'Swift on Android: The Game-Changing Workgroup That\'s Breaking Platform Barriers',
+        excerpt: 'The Swift Android Workgroup announcement represents a seismic shift in mobile development. This isn\'t just another community project—it\'s Swift\'s bold step toward true cross-platform ubiquity with official Android support.',
+        datePublished: 'July 11, 2025',
+        minRead: 12,
+        content: swiftAndroidContent,
+        isLocal: true
+      }
     default:
       return null
   }
@@ -71,6 +82,15 @@ export const getBlogPost = (slug: string): BlogPost | null => {
  */
 export const getAllBlogPosts = (): BlogPost[] => {
   return [
+    {
+      slug: 'swift-android-workgroup',
+      title: 'Swift on Android: The Game-Changing Workgroup That\'s Breaking Platform Barriers',
+      excerpt: 'The Swift Android Workgroup announcement represents a seismic shift in mobile development. This isn\'t just another community project—it\'s Swift\'s bold step toward true cross-platform ubiquity with official Android support.',
+      datePublished: 'July 11, 2025',
+      minRead: 12,
+      content: swiftAndroidContent,
+      isLocal: true
+    },
     {
       slug: 'mv-mvvm-debate',
       title: 'MV vs. MVVM: The iOS Development Debate',
@@ -129,6 +149,14 @@ export const getBlogPostMetadata = (slug: string): ContentMetadata | null => {
         author: 'Andreas Maerki',
         publishedTime: '2025-06-24',
         keywords: ['Apple', 'Liquid Glass', 'UI design', 'spatial computing', 'Vision Pro', 'user interface', 'design strategy', 'cognitive science', 'accessibility', 'innovation']
+      }
+    case 'swift-android-workgroup':
+      return {
+        title: 'Swift on Android: The Game-Changing Workgroup | Andreas Maerki',
+        description: 'Deep dive into the official Swift Android Workgroup announcement, exploring the technical challenges, community response, and strategic implications of bringing Swift to Android\'s 3+ billion devices.',
+        author: 'Andreas Maerki',
+        publishedTime: '2025-07-11',
+        keywords: ['Swift', 'Android', 'mobile development', 'cross-platform', 'Swift Android Workgroup', 'Java interoperability', 'JNI', 'Kotlin Multiplatform', 'iOS development', 'programming languages', 'Apple', 'open source']
       }
     default:
       return null
