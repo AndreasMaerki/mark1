@@ -5,6 +5,7 @@ import AboutPage from '@/pages/AboutPage'
 import ProjectPage from '@/pages/ProjectPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import BlogPostPage from '@/pages/BlogPostPage'
+import TranceGuidePage from '@/pages/TranceGuidePage'
 
 export default function Router(): JSX.Element {
   const location = useLocation()
@@ -30,6 +31,10 @@ export default function Router(): JSX.Element {
       <Route
         path='/about'
         element={<AboutPage />}
+      />
+      <Route
+        path='/tranceguide'
+        element={<TranceGuidePage />}
       />
       <Route
         path='/*'
