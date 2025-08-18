@@ -28,6 +28,7 @@
 
 #### Can I change the theme?
 - **Yes.** Settings → Theme lets you choose:
+
   - **Standard**: follows system light/dark with system colors
   - **Goa**: dark, neon-accented theme with neumorphic styling
 
@@ -42,8 +43,8 @@
 
 #### What map features are included?
 - Map with event annotations, user location indicator, and controls (compass, scale, pitch). Nearby events are grouped to reduce clutter.
-  
-  Note: At times, multiple events may appear stacked. This can occur when they share the same venue location or when organizers provide only approximate coordinates (for example, a city or municipality center such as Zürich) rather than the exact venue address.
+
+Note: At times, multiple events may appear stacked. This can occur when they share the same venue location or when organizers provide only approximate coordinates (for example, a city or municipality center such as Zürich) rather than the exact venue address.
 
 #### What do the map icons mean?
 - Icons reflect event types (e.g., outdoor/festival vs. indoor/club) to help distinguish events at a glance.
