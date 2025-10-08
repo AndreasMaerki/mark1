@@ -1,4 +1,4 @@
-# [andreasmaerki.dev](https://mark1.ch/)
+# [mark1.ch](https://mark1.ch/)
 
 **andreasmaerki.dev** (codenamed **MARK1**) is my personal portfolio website showcasing my iOS development expertise and projects. This website is built with [Tailwind CSS](https://tailwindcss.com/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/).
 
