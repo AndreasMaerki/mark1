@@ -1,14 +1,8 @@
-import { lazy } from 'react'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import { getAllBlogPosts } from '@/utils/contentLoader'
-
-// Keep lazy loading for complex components only
-const BlogCard = lazy(() => import('@/components/common/BlogCard'))
-
-// Direct imports for small, frequently used components
+import BlogCard from '@/components/common/BlogCard'
 import Heading1 from '@/components/common/reusable/heading/Heading1'
-import InlineLink from '@/components/common/reusable/InlineLink'
 import Section from '@/components/layouts/Section'
 
 export default function Blog(): JSX.Element {
@@ -34,7 +28,7 @@ export default function Blog(): JSX.Element {
           'pt-6'
         )}
       >
-        {blogPosts.map((post, index) => (
+        {blogPosts.map((post) => (
           <BlogCard
             key={post.slug}
             title={post.title}
@@ -42,7 +36,6 @@ export default function Blog(): JSX.Element {
             datePublished={post.datePublished}
             minRead={post.minRead}
             slug={post.slug}
-            isLocal={post.isLocal}
           />
         ))}
       </div>

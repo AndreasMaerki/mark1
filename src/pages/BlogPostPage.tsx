@@ -1,16 +1,14 @@
-import { lazy, useEffect, Suspense } from 'react'
+import { useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { getBlogPost, getBlogPostMetadata } from '@/utils/contentLoader'
-
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
-const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
-const Heading3 = lazy(() => import('@/components/common/reusable/heading/Heading3'))
-const InlineLink = lazy(() => import('@/components/common/reusable/InlineLink'))
-const ReactMarkdown = lazy(() => import('react-markdown'))
+import clsx from 'clsx'
+import useFadeInMounted from '@/hooks/useFadeInMounted'
+import { getBlogPost } from '@/utils/contentLoader'
+import Markdown from '@/components/common/Markdown'
 
 export default function BlogPostPage(): JSX.Element {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
+  const { animationClass } = useFadeInMounted()
 
   // Handle Escape key to close
   useEffect(() => {
@@ -41,9 +39,9 @@ export default function BlogPostPage(): JSX.Element {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-primary-dark">
+    <div className={clsx(animationClass, 'min-h-screen bg-white dark:bg-primary-dark')}>
       {/* Header with back button - positioned below navbar */}
-      <div className="bg-white/95 dark:bg-primary-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700/20 mt-20">
+      <div className={clsx('animate-fade-in', 'bg-white/95 dark:bg-primary-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700/20 mt-20')}>
         <div className="container mx-auto px-6 py-4">
           <Link 
             to="/blog" 
@@ -58,56 +56,39 @@ export default function BlogPostPage(): JSX.Element {
       </div>
 
       {/* Article content */}
-      <Suspense fallback={<div className="container mx-auto px-6 py-12 text-center">Loading...</div>}>
-        <article className="container mx-auto px-6 py-12 max-w-4xl">
-          <header className="mb-12">
-            <div className="flex items-center gap-4 text-gray-600 dark:text-muted mb-6">
-              <time>{blogPost.datePublished}</time>
-              <span>•</span>
-              <span>{blogPost.minRead} min read</span>
-              <span>•</span>
-              <span>iOS Development</span>
-            </div>
-          </header>
-
-          <div className="prose prose-lg dark:prose-invert max-w-none [&_p]:text-gray-700 [&_p]:dark:text-muted [&_p]:leading-relaxed [&_h1]:text-primary-dark [&_h1]:dark:text-white [&_h2]:text-primary-dark [&_h2]:dark:text-white [&_h3]:text-primary-dark [&_h3]:dark:text-white [&_strong]:text-primary-dark [&_strong]:dark:text-primary-light [&_code]:bg-gray-100 [&_code]:dark:bg-gray-800 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono">
-            <ReactMarkdown
-              components={{
-                h1: ({ children }) => <Heading1 className='text-4xl md:text-5xl text-primary-dark dark:text-white mb-6'>{children}</Heading1>,
-                h2: ({ children }) => <Heading2 className='mb-6 mt-8 text-primary-dark dark:text-white'>{children}</Heading2>,
-                h3: ({ children }) => <Heading3 className='mb-4 mt-6 text-primary-dark dark:text-white'>{children}</Heading3>,
-                a: ({ href, children }) => <InlineLink href={href || '#'}>{children}</InlineLink>,
-                p: ({ children }) => <p className="text-gray-700 dark:text-muted leading-relaxed mb-6">{children}</p>,
-                strong: ({ children }) => <strong className="font-semibold text-primary-dark dark:text-primary-light">{children}</strong>,
-                code: ({ children }) => <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono text-gray-800 dark:text-gray-200">{children}</code>,
-                pre: ({ children }) => <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-6">{children}</pre>,
-                ul: ({ children }) => <ul className="list-disc list-inside space-y-2 mb-6">{children}</ul>,
-                ol: ({ children }) => <ol className="list-decimal list-inside space-y-2 mb-6">{children}</ol>,
-                li: ({ children }) => <li className="text-gray-700 dark:text-muted">{children}</li>
-              }}
-            >
-              {blogPost.content}
-            </ReactMarkdown>
-            
-            {slug === 'argeotracking-analysis' && (
-              <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
-                <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
-                  This analysis is based on examining the ARGeoTracking project codebase, which demonstrates advanced techniques in CoreLocation, ARKit, and RealityKit integration.
-                </p>
-              </footer>
-            )}
-            
-            {slug === 'swift-android-workgroup' && (
-              <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
-                <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
-                  This analysis is based on the official Swift Android Workgroup announcement and community discussions from the Swift Forums. 
-                  Information sourced from <a href="https://www.swift.org/android-workgroup/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">swift.org/android-workgroup</a> and <a href="https://forums.swift.org/t/announcing-the-android-workgroup/80666" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Swift Forums discussions</a>.
-                </p>
-              </footer>
-            )}
+      <article className={clsx('animate-fade-in !delay-200', 'container mx-auto px-6 py-12 max-w-4xl')}>
+        <header className="mb-12">
+          <div className="flex items-center gap-4 text-gray-600 dark:text-muted mb-6">
+            <time>{blogPost.datePublished}</time>
+            <span>•</span>
+            <span>{blogPost.minRead} min read</span>
+            <span>•</span>
+            <span>iOS Development</span>
           </div>
-        </article>
-      </Suspense>
+        </header>
+
+        <Markdown
+          content={blogPost.content}
+          className="[&_p]:text-gray-700 [&_p]:dark:text-muted [&_p]:leading-relaxed [&_h1]:text-primary-dark [&_h1]:dark:text-white [&_h2]:text-primary-dark [&_h2]:dark:text-white [&_h3]:text-primary-dark [&_h3]:dark:text-white [&_strong]:text-primary-dark [&_strong]:dark:text-primary-light [&_code]:bg-gray-100 [&_code]:dark:bg-gray-800 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono"
+        />
+
+        {slug === 'argeotracking-analysis' && (
+          <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
+            <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
+              This analysis is based on examining the ARGeoTracking project codebase, which demonstrates advanced techniques in CoreLocation, ARKit, and RealityKit integration.
+            </p>
+          </footer>
+        )}
+        
+        {slug === 'swift-android-workgroup' && (
+          <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/20">
+            <p className="text-sm text-gray-600 dark:text-muted italic mb-4">
+              This analysis is based on the official Swift Android Workgroup announcement and community discussions from the Swift Forums. 
+              Information sourced from <a href="https://www.swift.org/android-workgroup/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">swift.org/android-workgroup</a> and <a href="https://forums.swift.org/t/announcing-the-android-workgroup/80666" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Swift Forums discussions</a>.
+            </p>
+          </footer>
+        )}
+      </article>
     </div>
   )
 }
