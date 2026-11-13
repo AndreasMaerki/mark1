@@ -1,15 +1,32 @@
-import { lazy } from 'react'
 import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
 import projects from '@/_data/projects'
-import ProjectProps from '@/types/components/ProjectProps'
+import ArrowRightSLineIcon from 'remixicon-react/ArrowRightSLineIcon'
+import Heading2 from '@/components/common/reusable/heading/Heading2'
+import PrimaryButton from '@/components/common/reusable/button/PrimaryButton'
+import ProjectCard from '@/components/common/ProjectCard'
+import Section from '@/components/layouts/Section'
 
-const ArrowRightSLineIcon = lazy(() => import('remixicon-react/ArrowRightSLineIcon'))
-const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
-const Section = lazy(() => import('@/components/layouts/Section'))
+interface LinkProps {
+  label: string
+  icon: JSX.Element
+  url?: string
+}
+
+interface ProjectProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  slug?: string
+  title: string
+  featured?: boolean | false
+  description: string | JSX.Element
+  category: string
+  techStacks: string[]
+  otherTechStacks?: string[]
+  links: LinkProps[]
+}
 
 export default function FeaturedProjects(): JSX.Element {
   const { animationClass } = useFadeInMounted()

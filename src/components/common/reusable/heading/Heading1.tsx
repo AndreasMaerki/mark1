@@ -1,7 +1,12 @@
 import clsx from 'clsx'
-import ComponentProps from '@/types/components/ComponentProps'
 
-export default function Heading1({ id, className, children }: ComponentProps): JSX.Element {
+interface Heading1Props {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+}
+
+export default function Heading1({ id, className, children }: Heading1Props): JSX.Element {
   return (
     <h1
       id={id}

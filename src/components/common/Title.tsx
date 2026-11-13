@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
-import SizeProps from '@/types/components/SizeProps'
 
-export default function Title({ size }: SizeProps): JSX.Element {
+interface TitleProps {
+  size?: string | 'sm'
+}
+
+export default function Title({ size }: TitleProps): JSX.Element {
   const textSize = (): string => {
     if (size === 'lg') {
       return 'text-2xl md:text-3xl'

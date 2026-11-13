@@ -1,7 +1,9 @@
-import ComponentProps from '@/types/components/ComponentProps'
 import LinkProps from '@/types/LinkProps'
 
-export default interface ProjectProps extends ComponentProps {
+export default interface ProjectProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
   slug?: string
   title: string
   featured?: boolean | false

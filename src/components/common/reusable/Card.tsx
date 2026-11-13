@@ -1,7 +1,12 @@
 import clsx from 'clsx'
-import ComponentProps from '@/types/components/ComponentProps'
 
-export default function Card({ className, children }: ComponentProps): JSX.Element {
+interface CardProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+}
+
+export default function Card({ className, children }: CardProps): JSX.Element {
   return (
     <div
       className={clsx(

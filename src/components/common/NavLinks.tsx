@@ -1,9 +1,12 @@
-import { lazy } from 'react'
 import { NavLink } from 'react-router-dom'
 import navItems from '@/_data/navItems'
-import NavItemsProps from '@/types/NavItemsProps'
+import PrimaryButton from '@/components/common/reusable/button/PrimaryButton'
 
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
+interface NavItemsProps {
+  name: string
+  href: string
+  isNew: boolean
+}
 
 interface NavLinksProps {
   isMobile?: boolean

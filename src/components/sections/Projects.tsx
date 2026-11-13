@@ -1,17 +1,32 @@
-import { lazy, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import projects from '@/_data/projects'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
-import ProjectProps from '@/types/components/ProjectProps'
-
-// Keep lazy loading for complex components only
-const ProjectCard = lazy(() => import('@/components/common/ProjectCard'))
-
-// Direct imports for small, frequently used components
+import ProjectCard from '@/components/common/ProjectCard'
 import Badge from '@/components/common/reusable/Badge'
 import Heading1 from '@/components/common/reusable/heading/Heading1'
 import InlineLink from '@/components/common/reusable/InlineLink'
 import Section from '@/components/layouts/Section'
+
+interface LinkProps {
+  label: string
+  icon: JSX.Element
+  url?: string
+}
+
+interface ProjectProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  slug?: string
+  title: string
+  featured?: boolean | false
+  description: string | JSX.Element
+  category: string
+  techStacks: string[]
+  otherTechStacks?: string[]
+  links: LinkProps[]
+}
 
 export default function Projects(): JSX.Element {
   const { animationClass } = useFadeInMounted()
@@ -104,8 +119,8 @@ export default function Projects(): JSX.Element {
         </div>
       )}
       {!filteredProjects.length && (
-        <div className='animate-fade-in mt-8 !delay-300'>
-          <p className='text-muted-dark dark:text-muted'>
+        <div className="animate-fade-in mt-8 !delay-300">
+          <p className="text-muted-dark dark:text-muted">
             Results not found.{' '}
             <span onClick={removeselectedFilters}>
               <InlineLink>Clear filters</InlineLink>

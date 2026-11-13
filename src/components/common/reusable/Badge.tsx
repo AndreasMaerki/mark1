@@ -1,5 +1,12 @@
 import clsx from 'clsx'
-import BadgeProps from '@/types/components/BadgeProps'
+
+interface BadgeProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  active?: boolean | false
+  onClick?: () => void
+}
 
 export default function Badge({ className, children, active, onClick }: BadgeProps): JSX.Element {
   // prettier-ignore

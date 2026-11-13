@@ -1,15 +1,8 @@
-import { lazy } from 'react'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
-import useSmoothScroll from '@/hooks/useSmootScroll'
-
-// Keep lazy loading for large/complex components
-const ArrowDownSLineIcon = lazy(() => import('remixicon-react/ArrowDownSLineIcon'))
-
-// Direct imports for small, critical components
+import ArrowDownSLineIcon from 'remixicon-react/ArrowDownSLineIcon'
 import MagicButton from '@/components/common/reusable/MagicButton'
 import SlidingInUnderline from '@/components/common/reusable/SlidingInUnderline'
-import HighlightText from '@/components/common/reusable/HighlightText'
 import InlineLink from '@/components/common/reusable/InlineLink'
 import SocialMediaLinks from '@/components/common/SocialMediaLinks'
 import ProfileImage from '@/components/common/ProfileImage'
@@ -17,10 +10,9 @@ import Section from '@/components/layouts/Section'
 
 export default function Hero(): JSX.Element {
   const { animationClass } = useFadeInMounted()
-  const { scrollToElement } = useSmoothScroll()
-  
+
   const scrollToProjects = (): void => {
-    scrollToElement('projects', -100) // -100px offset for navbar
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (

@@ -1,4 +1,8 @@
-import NavItemsProps from '@/types/NavItemsProps'
+interface NavItemsProps {
+  name: string
+  href: string
+  isNew: boolean
+}
 
 const navItems: NavItemsProps[] = [
   {

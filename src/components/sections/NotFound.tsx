@@ -1,16 +1,14 @@
-import { lazy, useRef, useEffect, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useRef, useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
 import useEventListener from '@/hooks/useEventListener'
-
-const Heading1 = lazy(() => import('@/components/common/reusable/heading/Heading1'))
-const Heading2 = lazy(() => import('@/components/common/reusable/heading/Heading2'))
-const Section = lazy(() => import('@/components/layouts/Section'))
-const SearchEyeLineIcon = lazy(() => import('remixicon-react/SearchEyeLineIcon'))
+import Heading1 from '@/components/common/reusable/heading/Heading1'
+import Heading2 from '@/components/common/reusable/heading/Heading2'
+import Section from '@/components/layouts/Section'
+import SearchEyeLineIcon from 'remixicon-react/SearchEyeLineIcon'
 
 export default function NotFound(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null)
-  const navigate = useNavigate()
   const [mounted, setMounted] = useState(false)
 
   // Mount animation timer
@@ -26,17 +24,6 @@ export default function NotFound(): JSX.Element {
     const { clientX, clientY } = e
     ref.current.style.setProperty('--gradientPosition', `${clientX}px ${clientY}px`)
   })
-
-  // Handle redirect parameter for SPA routing
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-    const redirectPath = urlParams.get('redirect')
-    if (redirectPath && redirectPath !== '/') {
-      // Remove the redirect parameter and navigate to the intended path
-      window.history.replaceState({}, '', redirectPath)
-      navigate(redirectPath, { replace: true })
-    }
-  }, [navigate])
 
   const commonPages = [
     { name: 'Home', path: '/', description: 'Back to the main page' },

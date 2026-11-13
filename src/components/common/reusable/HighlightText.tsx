@@ -1,20 +1,25 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import clsx from 'clsx'
-import ComponentProps from '@/types/components/ComponentProps'
 
-export default function HighlightText({ children }: ComponentProps): JSX.Element {
-  const ref = useRef<HTMLLinkElement>(null)
-  const [degree, setDegree] = useState<number>(0)
+interface HighlightTextProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+}
+
+export default function HighlightText({ children }: HighlightTextProps): JSX.Element {
+  const ref = useRef<HTMLSpanElement>(null)
+  const degreeRef = useRef<number>(0)
 
   useEffect((): (() => void) => {
     const interval = setInterval((): void => {
-      setDegree((degree + 15) % 360)
+      degreeRef.current = (degreeRef.current + 15) % 360
       if (ref.current) {
-        ref.current.style.backgroundImage = `linear-gradient(${degree}deg, var(--tw-gradient-stops))`
+        ref.current.style.backgroundImage = `linear-gradient(${degreeRef.current}deg, var(--tw-gradient-stops))`
       }
     }, 75)
     return (): void => clearInterval(interval)
-  })
+  }, [])
 
   return (
     <span

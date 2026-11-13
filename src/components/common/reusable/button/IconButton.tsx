@@ -1,12 +1,21 @@
 import clsx from 'clsx'
-import ButtonProps from '@/types/components/buttons/ButtonProps'
+
+interface IconButtonProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  onClick?: () => void
+  icon?: React.ReactNode
+  screenReaderText?: string
+  active?: boolean
+}
 
 export default function IconButton({
   onClick,
   className,
   screenReaderText,
   icon
-}: ButtonProps): JSX.Element {
+}: IconButtonProps): JSX.Element {
   return (
     <button
       onClick={onClick}

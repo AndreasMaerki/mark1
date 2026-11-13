@@ -1,17 +1,7 @@
-import { lazy } from 'react'
 import clsx from 'clsx'
-
-const PrimaryButton = lazy(() => import('@/components/common/reusable/button/PrimaryButton'))
-const NavLinks = lazy(() => import('@/components/common/NavLinks'))
-const SocialMediaLinks = lazy(() => import('@/components/common/SocialMediaLinks'))
-const Title = lazy(() => import('@/components/common/Title'))
-const ArrowUpSLineIcon = lazy(() => import('remixicon-react/ArrowUpSLineIcon'))
+import SocialMediaLinks from '@/components/common/SocialMediaLinks'
 
 export default function Footer(): JSX.Element {
-  const scrollToTop = (): void => {
-    window.scrollTo(0, 0)
-  }
-
   const currentYear = new Date().getFullYear()
 
   return (

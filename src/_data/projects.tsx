@@ -1,10 +1,27 @@
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import ExternalLinkFillIcon from 'remixicon-react/ExternalLinkFillIcon'
 import InlineLink from '@/components/common/reusable/InlineLink'
-import constants from '@/constants'
-import ProjectProps from '@/types/components/ProjectProps'
-import LinkProps from '@/types/LinkProps'
 import getGitHubUrl from '@/utils/getGitHubUrl'
+
+export interface LinkProps {
+  label: string
+  icon: JSX.Element
+  url?: string
+}
+
+export interface ProjectProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  slug?: string
+  title: string
+  featured?: boolean | false
+  description: string | JSX.Element
+  category: string
+  techStacks: string[]
+  otherTechStacks?: string[]
+  links: LinkProps[]
+}
 
 const github: LinkProps = {
   label: 'Source code',
@@ -31,25 +48,6 @@ const getLinks = (githubRepo?: string, url?: string, isAppStore?: boolean): Link
   }
   return links
 }
-
-const filters: string[] = [
-  'Swift',
-  'SwiftUI',
-  'UIKit',
-  'Objective-C',
-  'Core Data',
-  'Combine',
-  'WidgetKit',
-  'CloudKit',
-  'Firebase',
-  'REST API',
-  'Bluetooth',
-  'Location Services',
-  'Push Notifications',
-  'In-App Purchases',
-  'Fastlane',
-  'Unit Testing'
-]
 
 const projects: ProjectProps[] = [
   {

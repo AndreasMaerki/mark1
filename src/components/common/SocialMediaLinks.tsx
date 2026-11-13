@@ -1,9 +1,19 @@
 import clsx from 'clsx'
-import socialList from '@/_data/social.tsx'
-import ComponentProps from '@/types/components/ComponentProps'
-import SocialProps from '@/types/SocialProps'
+import socialList from '@/_data/social'
 
-export default function SocialMediaLinks({ className }: ComponentProps): JSX.Element {
+interface SocialProps {
+  name: string
+  url: string
+  icon: JSX.Element
+}
+
+interface SocialMediaLinksProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+}
+
+export default function SocialMediaLinks({ className }: SocialMediaLinksProps): JSX.Element {
   const social = socialList.map(
     (item: SocialProps, index: number): JSX.Element => (
       <li key={index}>

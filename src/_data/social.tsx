@@ -3,7 +3,12 @@ import LinkedinFillIcon from 'remixicon-react/LinkedinFillIcon'
 import GithubFillIcon from 'remixicon-react/GithubFillIcon'
 import YoutubeLineIcon from 'remixicon-react/YoutubeLineIcon'
 import constants from '@/constants'
-import SocialProps from '@/types/SocialProps'
+
+interface SocialProps {
+  name: string
+  url: string
+  icon: JSX.Element
+}
 
 const social: SocialProps[] = [
   {

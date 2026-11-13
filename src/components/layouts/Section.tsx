@@ -1,5 +1,11 @@
 import clsx from 'clsx'
-import { SectionProps } from '@/types/components/SectionProps'
+
+interface SectionProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  maxWidthClass?: string
+}
 
 export default function Section({
   id,

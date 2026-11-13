@@ -1,8 +1,13 @@
 import { useEffect } from 'react'
 import clsx from 'clsx'
-import ComponentProps from '@/types/components/ComponentProps'
 
-export default function PageWrapper({ className, children }: ComponentProps): JSX.Element {
+interface PageWrapperProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+}
+
+export default function PageWrapper({ className, children }: PageWrapperProps): JSX.Element {
   useEffect(() => {
     // Ensure scroll position is at top immediately when component mounts
     window.scrollTo(0, 0)

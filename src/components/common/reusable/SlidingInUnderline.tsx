@@ -1,11 +1,18 @@
 import clsx from 'clsx'
-import UnderlineProps from '@/types/components/UnderlineProps'
+
+interface SlidingInUnderlineProps {
+  id?: string
+  className?: string
+  children?: React.ReactNode
+  type?: string
+  height?: string
+}
 
 export default function SlidingInUnderline({
   children,
   type,
   height
-}: UnderlineProps): JSX.Element {
+}: SlidingInUnderlineProps): JSX.Element {
   const isPrimary = (type: string | undefined): boolean => {
     if (!type) {
       return true

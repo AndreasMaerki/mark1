@@ -59,5 +59,5 @@ export default function useDocumentTitle(meta: DocumentMeta): void {
     if (meta.ogType) updateMetaTag('og:type', meta.ogType)
     if (meta.articleAuthor) updateMetaTag('article:author', meta.articleAuthor)
     if (meta.articlePublishedTime) updateMetaTag('article:published_time', meta.articlePublishedTime)
-  }, [meta])
+  }, [meta.title, meta.description, meta.keywords, meta.canonical, meta.ogTitle, meta.ogDescription, meta.ogType, meta.articleAuthor, meta.articlePublishedTime])
 } 

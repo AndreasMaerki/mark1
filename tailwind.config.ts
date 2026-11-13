@@ -110,22 +110,18 @@ export default {
     }
   },
   plugins: [
-    function({ addUtilities }: { addUtilities: any }) {
-      const newUtilities = {
-        '.bg-grid-white\\/\\[0\\.03\\]': {
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'100\' height=\'100\' fill=\'none\' stroke=\'rgb(255 255 255 / 0.03)\'%3E%3Cpath d=\'M0 .5H31.5V32\'/%3E%3C/svg%3E")',
-        },
-        '.bg-grid-black\\/\\[0\\.2\\]': {
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'100\' height=\'100\' fill=\'none\' stroke=\'rgb(0 0 0 / 0.2)\'%3E%3Cpath d=\'M0 .5H31.5V32\'/%3E%3C/svg%3E")',
-        },
+    function ({ addUtilities }: { addUtilities: any }) {
+      // Tailwind cannot derive an opacity modifier (e.g. bg-grid-black/[0.02])
+      // from a url() background-image, so the two used variants are defined
+      // explicitly with the opacity baked into the SVG stroke.
+      addUtilities({
         '.bg-grid-white\\/\\[0\\.02\\]': {
           backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'100\' height=\'100\' fill=\'none\' stroke=\'rgb(255 255 255 / 0.02)\'%3E%3Cpath d=\'M0 .5H31.5V32\'/%3E%3C/svg%3E")',
         },
         '.bg-grid-black\\/\\[0\\.02\\]': {
           backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'100\' height=\'100\' fill=\'none\' stroke=\'rgb(0 0 0 / 0.02)\'%3E%3Cpath d=\'M0 .5H31.5V32\'/%3E%3C/svg%3E")',
         },
-      }
-      addUtilities(newUtilities)
-    }
-  ]
+      })
+    },
+  ],
 } satisfies Config

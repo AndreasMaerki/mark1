@@ -1,10 +1,8 @@
-import { lazy, useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import clsx from 'clsx'
 
-// Keep lazy loading for complex components
-const MatrixEffect = lazy(() => import('@/components/common/reusable/MatrixEffect'))
-
 // Direct imports for small, critical components
+import MatrixEffect from '@/components/common/reusable/MatrixEffect'
 import NavLinks from '@/components/common/NavLinks'
 import ThemeSwitcher from '@/components/common/ThemeSwitcher'
 import Title from '@/components/common/Title'
