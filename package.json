@@ -19,10 +19,8 @@
     "remixicon-react": "^1.0.0"
   },
   "devDependencies": {
-    "@netlify/functions": "^2.8.2",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
-    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vitejs/plugin-react": "^4.7.0",
@@ -31,7 +29,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.26",
     "postcss": "^8.5.32",
-    "postcss-selector-parser": "^6.1.6",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "tailwindcss": "^3.4.19",

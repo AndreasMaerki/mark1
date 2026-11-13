@@ -13,14 +13,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  server: {
-    proxy: {
-      '/blog/rss': {
-        target: 'https://medium.com/@andreasmaerki/feed',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/blog\/rss/, '')
-      }
-    }
-  },
   assetsInclude: ['**/*.md']
 })
