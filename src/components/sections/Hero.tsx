@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
+import smoothScrollTo from '@/utils/smoothScrollTo'
 import ArrowDownSLineIcon from 'remixicon-react/ArrowDownSLineIcon'
 import MagicButton from '@/components/common/reusable/MagicButton'
 import SlidingInUnderline from '@/components/common/reusable/SlidingInUnderline'
@@ -12,7 +13,9 @@ export default function Hero(): JSX.Element {
   const { animationClass } = useFadeInMounted()
 
   const scrollToProjects = (): void => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const target = document.getElementById('projects')
+    if (!target) return
+    smoothScrollTo(target.getBoundingClientRect().top + window.scrollY)
   }
 
   return (
