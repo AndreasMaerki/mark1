@@ -51,6 +51,22 @@ const getLinks = (githubRepo?: string, url?: string, isAppStore?: boolean): Link
 
 const projects: ProjectProps[] = [
   {
+    slug: 'neuraposter-app',
+    featured: true,
+    title: 'NeuraPoster',
+    description: (
+      <span>
+        AI caption generator for iPhone that turns photos into ready-to-post social media captions and hashtags.
+        Photos are analyzed with Gemini 2.5 Flash and Apple Vision, with creator-style post profiles to set the voice.
+        Caption history stays local on the device — no photo storage on the server. Developed in Switzerland.
+      </span>
+    ),
+    techStacks: ['SwiftUI', 'Swift', 'Firebase', 'Gemini API'],
+    otherTechStacks: ['MVVM Architecture', '@Observable', 'Vision Framework', 'AVFoundation', 'StoreKit', 'Firebase Functions'],
+    category: 'iOS Development',
+    links: getLinks(undefined, 'https://apps.apple.com/ch/app/neuraposter/id6755492998', true)
+  },
+  {
     slug: 'k-kiosk-app',
     featured: true,
     title: 'k kiosk App',
