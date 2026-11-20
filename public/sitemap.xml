@@ -20,9 +20,15 @@
   </url>
   <url>
     <loc>https://andreasmaerki.dev/blog</loc>
-    <lastmod>2025-02-14</lastmod>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://andreasmaerki.dev/blog/swift-android-workgroup</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://andreasmaerki.dev/blog/mv-mvvm-debate</loc>
@@ -37,9 +43,21 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://andreasmaerki.dev/blog/argeotracking-ar-coordinate-transformation</loc>
+    <loc>https://andreasmaerki.dev/blog/argeotracking-analysis</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://andreasmaerki.dev/tranceguide</loc>
+    <lastmod>2025-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://andreasmaerki.dev/tranceguide-privacy</loc>
+    <lastmod>2025-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

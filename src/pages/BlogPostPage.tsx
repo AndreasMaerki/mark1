@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import clsx from 'clsx'
 import useFadeInMounted from '@/hooks/useFadeInMounted'
+import useDocumentTitle from '@/hooks/useDocumentTitle'
 import { getBlogPost } from '@/utils/contentLoader'
 import Markdown from '@/components/common/Markdown'
 
@@ -9,6 +10,20 @@ export default function BlogPostPage(): JSX.Element {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const { animationClass } = useFadeInMounted()
+
+  // Get blog post data
+  const blogPost = slug ? getBlogPost(slug) : null
+
+  useDocumentTitle({
+    title: blogPost ? `${blogPost.title} | Andreas Maerki` : 'Blog Post | Andreas Maerki',
+    description: blogPost?.excerpt,
+    canonical: blogPost ? `https://andreasmaerki.dev/blog/${blogPost.slug}` : undefined,
+    ogTitle: blogPost?.title,
+    ogDescription: blogPost?.excerpt,
+    ogType: 'article',
+    articleAuthor: 'Andreas Maerki',
+    articlePublishedTime: blogPost?.datePublished
+  })
 
   // Handle Escape key to close
   useEffect(() => {
@@ -21,9 +36,6 @@ export default function BlogPostPage(): JSX.Element {
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
   }, [navigate])
-
-  // Get blog post data
-  const blogPost = slug ? getBlogPost(slug) : null
 
   if (!blogPost) {
     return (
